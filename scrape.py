@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jun 16 09:28:30 2020
+Created on Tue Jun 16 09:28:30 2020.
 
 @author: Alex Boivin
 """
@@ -17,37 +17,62 @@ import time
 import pandas as pd
 import re
 
+# search for all red wines between 10-40$ with a rating of 3.5 or above
 URL = 'https://www.vivino.com/explore?e=eJwNyUEKgCAQBdDb_LVC21lE3SIiJptESI1RrG6fm7d5UckihkTWIPJLg4H7aBrhOjPuvv6kxhqk8oW8k3INyZeNmyh7QaZDisNTl5XsD-oNGk4='
 
 class element_present_after_scrolling():
     """
-    An expectation for checking that an element is present.
+    A custom selenium expectation for scrolling until an element is present.
     
-    locator - used to find the element
-    returns the WebElement once it has the particular element
+    Parameters
+    ----------
+    locator : tuple
+        Used to find the element.
+        
+    Returns
+    -------
+    elements : WebElement 
+        Once it has the particular element.
+        
     """
+    
     def __init__(self, locator, driver):
+        """Attributes."""
         self.locator = locator
         self.driver = driver
+        
     def __call__(self, driver):
+        """Scroll by 500px increments."""
         # self.driver._debug("element_present_after_scrolling::Finding Elements")
         elements = driver.find_elements(*self.locator)   # Finding the referenced element
         if len(elements) > 0:
             return elements
         else:
             self.driver.execute_script("window.scrollBy(0, 500);")
-
+            
 class wine_data():
     """Scrape wine data and reviews from Vivino."""
     
     def __init__(self,scroll_to_bottom=False):
         """
-        Scrape data using selenium and store as a pandas DataFrame.
+        Scrape data using selenium with Firefox and store as a pandas DataFrame.
 
         Parameters
         ----------
-        scroll_to_bottom : TYPE, optional
-            DESCRIPTION. The default is False.
+        scroll_to_bottom : bool, optional
+            If True scroll to bottom of the search page to get all the results.
+            The default is False.
+
+        Attributes
+        ----------
+        number_of_results : int
+            Number of search results.
+            
+        wine_data : DataFrame
+            Collected wine data.
+            
+        results_data : DataFrame
+            Collected review data.
 
         Returns
         -------
@@ -80,7 +105,20 @@ class wine_data():
         self.wine_data, self.review_data = self._get_wine_info()
                 
     def _infinity_scroll(self,element=False):
-        """Infinite scroll to bottom of page."""
+        """
+        Infinite scroll to bottom of a page or element. Breaks when done.
+
+        Parameters
+        ----------
+        element : WebElement, optional
+            WebElement to scroll to the botom of instead of the whole page. The 
+            default is False.
+
+        Returns
+        -------
+        None.
+
+        """
         if element: # scroll the page if no element is provided
             el = element
         else:
@@ -111,7 +149,10 @@ class wine_data():
         Returns
         -------
         wine_data : DataFrame
-            DESCRIPTION.
+            Collected wine data.
+            
+        results_data : DataFrame
+            Collected review data.
 
         """
         global discover_wines
