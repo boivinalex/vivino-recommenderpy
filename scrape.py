@@ -7,8 +7,6 @@ Created on Tue Jun 16 09:28:30 2020.
 
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options
-# from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-# from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -22,7 +20,9 @@ from timeit import default_timer as timer
 import glob
 
 # search for all red wines between 10-40$ with a rating of 3.5 or above
-URL = 'https://www.vivino.com/explore?e=eJwNyUEKgCAQBdDb_LVC21lE3SIiJptESI1RrG6fm7d5UckihkTWIPJLg4H7aBrhOjPuvv6kxhqk8oW8k3INyZeNmyh7QaZDisNTl5XsD-oNGk4='
+# URL = 'https://www.vivino.com/explore?e=eJwNyUEKgCAQBdDb_LVC21lE3SIiJptESI1RrG6fm7d5UckihkTWIPJLg4H7aBrhOjPuvv6kxhqk8oW8k3INyZeNmyh7QaZDisNTl5XsD-oNGk4='
+# search for all red wines between 10-25$ with a rating of 3.5 or above
+URL = 'https://www.vivino.com/explore?e=eJwNxEEKgCAUBcDbvGVk4fItom4RET8zEdLCxOr2NYsJiW2lEXykqhHkYaNhXvYdzN-AkwpuY5HkbZYdx8Ik2Ud3zVJsEmdxcLWXwZ3HieoDC54atg=='
 
 # number of seconds to wait before each scroll when infinite scrolling to botom
 # may not get to the botom if too short
@@ -119,7 +119,8 @@ class wine_data():
             
             # check that page has loaded
             try:
-                element_present = EC.presence_of_element_located((By.CLASS_NAME, 'vintageTitle__winery--2YoIr'))
+                element_present = EC.presence_of_element_located((By.CLASS_NAME,\
+                                    'vintageTitle__winery--2YoIr'))
                 WebDriverWait(self.driver, self.timeout).until(element_present)
             except TimeoutException:
                 print("Timed out waiting for page to load")
@@ -127,7 +128,8 @@ class wine_data():
             # get main window handle 
             self._main_window = self.driver.current_window_handle
             # get number of results
-            number_of_results = self.driver.find_element_by_class_name('querySummary__querySummary--39WP2').text
+            number_of_results = self.driver.find_element_by_class_name\
+                ('querySummary__querySummary--39WP2').text
             self.number_of_results = int(re.findall('\d+',number_of_results)[0]) # extract number of results using regular expressions
             print("Found {} wines.".format(self.number_of_results))
         
@@ -178,19 +180,23 @@ class wine_data():
         else:
             el = self.driver.find_element_by_class_name('inner-page')
         # Get scroll height
-        last_height = self.driver.execute_script("return arguments[0].scrollHeight", el)
+        last_height = self.driver.execute_script\
+            ("return arguments[0].scrollHeight", el)
         while True:
             # Scroll down to bottom
             if element: #scroll the element
-                self.driver.execute_script('arguments[0].scrollTop = arguments[0].scrollHeight', el)
+                self.driver.execute_script\
+                    ('arguments[0].scrollTop = arguments[0].scrollHeight', el)
             else: #scroll the window
-                self.driver.execute_script("window.scrollTo(0, arguments[0].scrollHeight);", el)
+                self.driver.execute_script\
+                    ("window.scrollTo(0, arguments[0].scrollHeight);", el)
         
             # Wait to load page
             time.sleep(SCROLL_PAUSE_TIME)
         
             # Calculate new scroll height and compare with last scroll height
-            new_height = self.driver.execute_script("return arguments[0].scrollHeight", el)
+            new_height = self.driver.execute_script\
+                ("return arguments[0].scrollHeight", el)
             if new_height == last_height:
                 break #break at the bottom
             last_height = new_height
@@ -211,16 +217,13 @@ class wine_data():
         # start timing the scraping process
         start = timer()
         print("Starting scrape...")
-        global discover_wines
-        discover_wines = self.driver.find_elements_by_class_name('vintageTitle__winery--2YoIr')
-        global wine_dict_list
-        global review_dict_list
+        discover_wines = self.driver.find_elements_by_class_name\
+            ('vintageTitle__winery--2YoIr')
         wine_dict_list = []
         review_dict_list = []
         
         ##TEST
-        # del discover_wines[0]
-        discover_wines = discover_wines[0:3]
+        discover_wines = discover_wines[0:50]
         
         # for i, wine in enumerate(discover_wines):
         for i, wine in enumerate(discover_wines):
@@ -230,61 +233,66 @@ class wine_data():
             self.driver.switch_to.window(self.driver.window_handles[1]) 
             
             # make top of page is loaded
-            global element_present
             try: 
-                element_present = EC.presence_of_element_located((By.CLASS_NAME, 'inner-page'))
+                element_present = EC.presence_of_element_located\
+                    ((By.CLASS_NAME, 'inner-page'))
                 WebDriverWait(self.driver, self.timeout).until(element_present)
             except TimeoutException:
                 print("Timed out waiting for wine tab to load")
             
             # if show more reviews button is below the loaded page, scroll until it loads
             try:
-                element_present = element_present_after_scrolling((By.CLASS_NAME, 'anchor__anchor--3DOSm.communityReviews__showAllReviews--1e12c.anchor__vivinoLink--29E1-'), self.driver)
+                element_present = element_present_after_scrolling((By.CLASS_NAME,\
+                    'anchor__anchor--3DOSm.communityReviews__showAllReviews--1e12c.anchor__vivinoLink--29E1-'),\
+                                                                  self.driver)
                 WebDriverWait(self.driver, self.timeout).until(element_present)
             except TimeoutException:
                 print("Timed out waiting for show more reviews button")
             
-            # #make sure all relevant page items have loaded
-            # try: #make sure all relevant page items have loaded
-            #     element_present = EC.presence_of_element_located((By.CLASS_NAME, 'anchor__anchor--3DOSm.communityReviews__showAllReviews--1e12c.anchor__vivinoLink--29E1-'))
-            #     WebDriverWait(self.driver, self.timeout).until(element_present)
-            # except TimeoutException:
-            #     print("Timed out waiting for tab to load")
-            
             # get wine info
             winery_name = self.driver.find_element_by_class_name('winery').text
             wine_name = self.driver.find_element_by_class_name('vintage').text
-            wine_country = self.driver.find_element_by_class_name('wineLocationHeader__country--1RcW2').text
-            wine_rating = self.driver.find_element_by_class_name('vivinoRatingWide__averageValue--1zL_5').text
-            wine_rating_number = self.driver.find_element_by_class_name('vivinoRatingWide__basedOn--s6y0t').text
-            wine_price = float(self.driver.find_element_by_class_name('purchaseAvailabilityPPC__amount--2_4GT').text.split('$')[1])
-            global wine_dict
-            wine_dict = {'WineName':wine_name,'Winery':winery_name,'Country':wine_country,'Rating':wine_rating,'NumberOfRatings':wine_rating_number,'Price':wine_price}
+            wine_country = self.driver.find_element_by_class_name\
+                ('wineLocationHeader__country--1RcW2').text
+            wine_rating = self.driver.find_element_by_class_name\
+                ('vivinoRatingWide__averageValue--1zL_5').text
+            wine_rating_number = self.driver.find_element_by_class_name\
+                ('vivinoRatingWide__basedOn--s6y0t').text
+            wine_price = float(self.driver.find_element_by_class_name\
+                ('purchaseAvailabilityPPC__amount--2_4GT').text.split('$')[1])
+            wine_dict = {'WineName':wine_name,'Winery':winery_name,\
+                         'Country':wine_country,'Rating':wine_rating,\
+                         'NumberOfRatings':wine_rating_number,'Price':wine_price}
             wine_dict_list.append(wine_dict)
             
             # get reviews
-            review_link = self.driver.find_element_by_class_name('anchor__anchor--3DOSm.communityReviews__showAllReviews--1e12c.anchor__vivinoLink--29E1-')
+            review_link = self.driver.find_element_by_class_name\
+                ('anchor__anchor--3DOSm.communityReviews__showAllReviews--1e12c.anchor__vivinoLink--29E1-')
             review_link.click()
             try: #make sure review popup has loaded
-                element_present = EC.presence_of_element_located((By.CLASS_NAME, 'allReviews__reviews--EpUem'))
+                element_present = EC.presence_of_element_located\
+                    ((By.CLASS_NAME, 'allReviews__reviews--EpUem'))
                 WebDriverWait(self.driver, self.timeout).until(element_present)
             except TimeoutException:
                 print("Timed out waiting for review popup to load")
-            review_pane = self.driver.find_element_by_class_name('baseModal__window--3r5PC.baseModal__themeNoPadding--T_ROG')
+            review_pane = self.driver.find_element_by_class_name\
+                ('baseModal__window--3r5PC.baseModal__themeNoPadding--T_ROG')
             # scroll to the botom of the reviews
             self._infinity_scroll(element=review_pane)
             # get review info
-            global discover_reviews
-            discover_reviews = self.driver.find_elements_by_class_name('reviewCard__reviewContainer--1kMJM')
+            discover_reviews = self.driver.find_elements_by_class_name\
+                ('reviewCard__reviewContainer--1kMJM')
             # discard last 3 since they are duplicates
             discover_reviews = discover_reviews[:-3]
             # print what tab we are on
             for review in discover_reviews:
-                user_name = review.find_element_by_class_name('anchor__anchor--3DOSm.reviewCard__userName--2KnRl').text
-                rating_elem = review.find_element_by_class_name('rating__rating--ZZb_x')
+                user_name = review.find_element_by_class_name\
+                    ('anchor__anchor--3DOSm.reviewCard__userName--2KnRl').text
+                rating_elem = review.find_element_by_class_name\
+                    ('rating__rating--ZZb_x')
                 rating = float(rating_elem.get_attribute("aria-label").split()[1])
-                global review_dict
-                review_dict = {'Username':user_name,'WineName':wine_name,'Winery':winery_name,'Rating':rating}
+                review_dict = {'Username':user_name,'WineName':wine_name,\
+                               'Winery':winery_name,'Rating':rating}
                 review_dict_list.append(review_dict)
             print('Completed wine {tab_num} of {tab_total}. Scrapabale reviews: {rev_num}'\
               .format(tab_num=i+1,tab_total=len(discover_wines),\
