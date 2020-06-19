@@ -223,7 +223,7 @@ class wine_data():
         review_dict_list = []
         
         ##TEST
-        discover_wines = discover_wines[0:50]
+        # discover_wines = discover_wines[0:50]
         
         # for i, wine in enumerate(discover_wines):
         for i, wine in enumerate(discover_wines):
