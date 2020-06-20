@@ -219,6 +219,8 @@ class wine_data():
         print("Starting scrape...")
         discover_wines = self.driver.find_elements_by_class_name\
             ('vintageTitle__winery--2YoIr')
+        global wine_dict_list # global in case of premature end of run
+        global review_dict_list
         wine_dict_list = []
         review_dict_list = []
         
@@ -228,17 +230,23 @@ class wine_data():
         # for i, wine in enumerate(discover_wines):
         for i, wine in enumerate(discover_wines):
             # open wine page in new tab
-            wine.click()
-            # switch to latest tab (firefox always opens a new tab next to the main tab)
-            self.driver.switch_to.window(self.driver.window_handles[1]) 
-            
-            # make top of page is loaded
-            try: 
-                element_present = EC.presence_of_element_located\
-                    ((By.CLASS_NAME, 'inner-page'))
-                WebDriverWait(self.driver, self.timeout).until(element_present)
-            except TimeoutException:
-                print("Timed out waiting for wine tab to load")
+            attempts = 0
+            while attempts < 100: # in case of connection issue
+                try:
+                    wine.click()
+                    # switch to latest tab (firefox always opens a new tab next to the main tab)
+                    self.driver.switch_to.window(self.driver.window_handles[1]) 
+                    # make sure top of page is loaded
+                    element_present = EC.presence_of_element_located\
+                        ((By.CLASS_NAME, 'inner-page'))
+                    WebDriverWait(self.driver, self.timeout).until(element_present)
+                    break
+                except TimeoutException:
+                    attempts += 1
+                    self.driver.close() # close the unloaded tab
+                    self.driver.switch_to.window(self._main_window) # back to main window
+                    print("Timed out waiting for wine tab to load")
+                    time.sleep(10) # wait for 10 seconds 
             
             # if show more reviews button is below the loaded page, scroll until it loads
             try:
