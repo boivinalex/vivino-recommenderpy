@@ -26,7 +26,7 @@ URL = 'https://www.vivino.com/explore?e=eJwNxEEKgCAUBcDbvGVk4fItom4RET8zEdLCxOr2
 
 # number of seconds to wait before each scroll when infinite scrolling to botom
 # may not get to the botom if too short
-SCROLL_PAUSE_TIME = 1
+SCROLL_PAUSE_TIME = 0.8
 
 class element_present_after_scrolling():
     """
