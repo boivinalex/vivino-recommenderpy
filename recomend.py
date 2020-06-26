@@ -25,14 +25,14 @@ from collections import defaultdict
 class hyper_tune():
     """Use surprise RandomizedSearchCV to tune hyperparameters."""
     
-    def __init__(self,data_ml,min_n_ratings=2,tune_method='rmse'):
-        # self.data = combined_processed_wine_data
-        # self.data_ml = Dataset.load_from_df(self.data, reader=Reader(rating_scale=(1,5)))
+    def __init__(self,data_ml,tune_method='rmse'):
         self.data_ml = data_ml
-        self.min_n_ratings = min_n_ratings
         self.tune_method = tune_method
         
-    def __call__(self,min_n_ratings=2):
+    def __call__(self,tune_method=None):
+        
+        if not tune_method:
+            tune_method = self.tune_method
         
         print('Tuning...')
         # Seperate data into A and B sets for unbiased accuracy evaluation
@@ -55,12 +55,12 @@ class hyper_tune():
         search_time = time.time() - start_time
         print("Took {} seconds for search.".format(search_time))
         # best score
-        print(gs.best_score[self.tune_method])
+        print('Best score :' + str(gs.best_score[tune_method]))
         # combination of parameters that gave the best RMSE score
-        print(gs.best_params[self.tune_method])
+        print('Best params :' + str(gs.best_params[tune_method]))
         
-        # get resulting algorithm with tunned parameters
-        algo = gs.best_estimator[self.tune_method]
+        # get resulting algorithm with tuned parameters
+        algo = gs.best_estimator[tune_method]
         
         # retrain on the whole set A
         trainset = data_ml.build_full_trainset()
@@ -68,7 +68,7 @@ class hyper_tune():
         
         # Compute biased accuracy on A
         predictions = algo.test(trainset.build_testset())
-        print('Biased accuracy,', end='   ')
+        print('Biased accuracy:')
         accuracy.rmse(predictions)
         accuracy.mae(predictions)
         accuracy.fcp(predictions)
@@ -77,7 +77,7 @@ class hyper_tune():
         # make data_ml the set B
         testset = data_ml.construct_testset(B_raw_ratings)
         predictions = algo.test(testset)
-        print('Unbiased accuracy,', end=' ')
+        print('Unbiased accuracy:')
         accuracy.rmse(predictions)
         accuracy.mae(predictions)
         accuracy.fcp(predictions)
@@ -96,12 +96,12 @@ class wine_recomender():
         # self.data = self.data[['Username','Wine','Rating']]
         
         # Cross validation
-        # if tune, always compare tunned and un-tunned cross-validation results
+        # if tune, always compare tuned and un-tuned cross-validation results
         if self.tune:
-            tunner = hyper_tune(self.data_ml)
-            tunned_algo = tunner()
+            tuner = hyper_tune(self.data_ml)
+            tuned_algo = tuner()
             # cross-validate with 4 folds corresponding to a 75/25 split
-            # cross_validate(tunned_algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
+            # cross_validate(tuned_algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
         algo = SVD()
         # cross_validate(algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
         
@@ -112,30 +112,30 @@ class wine_recomender():
             # train and test algorithm
             if self.tune:
                 start_time = time.time()
-                tunned_algo.fit(trainset)
+                tuned_algo.fit(trainset)
                 train_time = time.time() - start_time
-                print("Took {} seconds for tunned training.".format(train_time))
+                print("Took {} seconds for tuned training.".format(train_time))
                 start_time = time.time()
-                tunned_predictions = tunned_algo.test(testset)
+                tuned_predictions = tuned_algo.test(testset)
                 test_time = time.time() - start_time
-                print("Took {} seconds for tunned testing.".format(test_time))    
+                print("Took {} seconds for tuned testing.".format(test_time))    
             start_time = time.time()
             algo.fit(trainset)
             train_time = time.time() - start_time
-            print("Took {} seconds for un-tunned training.".format(train_time))
+            print("Took {} seconds for un-tuned training.".format(train_time))
             start_time = time.time()
             global predictions
             predictions = algo.test(testset)
             test_time = time.time() - start_time
-            print("Took {} seconds for un-tunned testing.".format(test_time))
+            print("Took {} seconds for un-tuned testing.".format(test_time))
             
             # compute metrics
             if self.tune:
-                accuracy.rmse(tunned_predictions, verbose=True)
-                tunned_precisions, tunned_recalls = self.precision_recall_at_k(tunned_predictions, k=5, threshold=3.5)
+                accuracy.rmse(tuned_predictions, verbose=True)
+                tuned_precisions, tuned_recalls = self.precision_recall_at_k(tuned_predictions, k=5, threshold=3.5)
                 # Precision and recall can then be averaged over all users
-                print(sum(prec for prec in tunned_precisions.values()) / len(tunned_precisions))
-                print(sum(rec for rec in tunned_recalls.values()) / len(tunned_recalls))
+                print(sum(prec for prec in tuned_precisions.values()) / len(tuned_precisions))
+                print(sum(rec for rec in tuned_recalls.values()) / len(tuned_recalls))
             accuracy.rmse(predictions, verbose=True)
             precisions, recalls = self.precision_recall_at_k(predictions)
             # Precision and recall can then be averaged over all users
@@ -143,31 +143,31 @@ class wine_recomender():
             print(sum(rec for rec in recalls.values()) / len(recalls))
             
         # Make recomendations
-        # only recomend using tunned OR un-tunned algorithm
+        # only recomend using tuned OR un-tuned algorithm
         full_trainset = self.data_ml.build_full_trainset()
         if self.tune:
             start_time = time.time()
-            tunned_algo.fit(full_trainset)
+            tuned_algo.fit(full_trainset)
             train_time = time.time() - start_time
-            print("Took {} seconds for tunned full training.".format(train_time))
+            print("Took {} seconds for tuned full training.".format(train_time))
         else:
             start_time = time.time()
             algo.fit(full_trainset)
             train_time = time.time() - start_time
-            print("Took {} seconds for un-tunned full training.".format(train_time))
+            print("Took {} seconds for un-tuned full training.".format(train_time))
         
         # all user-item pairs with no rating in the trainset
         anti_testset = trainset.build_anti_testset()
         if self.tune:
             start_time = time.time()
-            predictions = tunned_algo.test(anti_testset)
+            predictions = tuned_algo.test(anti_testset)
             test_time = time.time() - start_time
-            print("Took {} seconds for tunned predictions.".format(test_time))    
+            print("Took {} seconds for tuned predictions.".format(test_time))    
         else:
             start_time = time.time()
             predictions = algo.test(anti_testset)
             test_time = time.time() - start_time
-            print("Took {} seconds for un-tunned predictions.".format(test_time))    
+            print("Took {} seconds for un-tuned predictions.".format(test_time))    
             
         # Get top-n predictions for all users
         self.top_n_items, self.top_n_items_pd = self.get_top_n(predictions, n=5)
