@@ -21,14 +21,20 @@ from collections import defaultdict
 class wine_recomender():
     """Vivino collaborative filtering recomender system."""
     
-    def __init__(self,processed_wine_data,tune=False):
+    def __init__(self,processed_wine_data,n_splits=5,k_predictions=5,tune=False):
         
-        self.tune = tune
+
         self.data = processed_wine_data.combined_ratings_from_filtered_users_data
         self.data_ml = Dataset.load_from_df(self.data, reader=Reader(rating_scale=(1,5)))
-        # self.data['Wine'] = self.data[['Winery','WineName']].apply(' - '.join,axis=1)
-        # self.data = self.data[['Username','Wine','Rating']]
         
+        self.n_splits = n_splits
+        self.k_predictions = k_predictions
+        self.tune = tune
+        
+        self.top_k_items, self.top_k_items_pd, self.all_predictions = self.make_predictions()
+        
+        
+    def make_predictions(self):
         # Cross validation
         # if tune, always compare tuned and un-tuned cross-validation results
         if self.tune:
@@ -41,7 +47,7 @@ class wine_recomender():
         # cross_validate(algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
         
         # cross-validate with 5 folds corresponding to a 80/20 split
-        kf = KFold(n_splits=5)
+        kf = KFold(n_splits=self.n_splits)
         # initialize cross-validation measures
         measures = ['rmse','mae','preci.@k','recall@k']
         if self.tune:
@@ -64,38 +70,31 @@ class wine_recomender():
                 start_time = time.time()
                 tuned_algo.fit(trainset)
                 train_time_tuned.append(time.time() - start_time)
-                # print("Took {} seconds for tuned training.".format(train_time))
                 start_time = time.time()
                 tuned_predictions = tuned_algo.test(testset)
                 test_time_tuned.append(time.time() - start_time)
-                # print("Took {} seconds for tuned testing.".format(test_time))
             start_time = time.time()
             algo.fit(trainset)
             train_time.append(time.time() - start_time)
-            # print("Took {} seconds for un-tuned training.".format(train_time))
             start_time = time.time()
             # global predictions
             predictions = algo.test(testset)
             test_time.append(time.time() - start_time)
-            # print("Took {} seconds for un-tuned testing.".format(test_time))
             
             # compute metrics
             if self.tune:
                 rmse_tuned_vals.append(accuracy.rmse(tuned_predictions,verbose=False))
                 mae_tuned_vals.append(accuracy.mae(tuned_predictions,verbose=False))
-                tuned_precisions, tuned_recalls = self.precision_recall_at_k(tuned_predictions, k=5, threshold=3.5)
+                tuned_precisions, tuned_recalls = self.precision_recall_at_k(tuned_predictions, k=self.k_predictions, threshold=3.5)
                 # Precision and recall can then be averaged over all users
                 precision_tuned_vals.append(sum(prec for prec in tuned_precisions.values()) / len(tuned_precisions))
                 recall_tuned_vals.append(sum(rec for rec in tuned_recalls.values()) / len(tuned_recalls))
-            # accuracy.rmse(predictions, verbose=True)
             rmse_vals.append(accuracy.rmse(predictions,verbose=False))
             mae_vals.append(accuracy.mae(predictions,verbose=False))
-            precisions, recalls = self.precision_recall_at_k(predictions)
+            precisions, recalls = self.precision_recall_at_k(predictions, k=self.k_predictions, threshold=3.5)
             # Precision and recall can then be averaged over all users
             precision_vals.append(sum(prec for prec in precisions.values()) / len(precisions))
             recall_vals.append(sum(rec for rec in recalls.values()) / len(recalls))
-            # print(sum(prec for prec in precisions.values()) / len(precisions))
-            # print(sum(rec for rec in recalls.values()) / len(recalls))
             
         # print metrics
         if self.tune:
@@ -110,9 +109,9 @@ class wine_recomender():
         
         if self.tune:
             print('Tuned Cross-Validation Results:')
-            surprise.model_selection.validation.print_summary(tuned_algo,measures,test_measures_tuned_dict,None,train_time_tuned,test_time_tuned,5)
+            surprise.model_selection.validation.print_summary(tuned_algo,measures,test_measures_tuned_dict,None,train_time_tuned,test_time_tuned,self.n_splits)
         print('Un-tuned Cross-Validation Results:')
-        surprise.model_selection.validation.print_summary(algo,measures,test_measures_dict,None,train_time,test_time,5)
+        surprise.model_selection.validation.print_summary(algo,measures,test_measures_dict,None,train_time,test_time,self.n_splits)
             
         # Make recomendations
         # only recomend using tuned OR un-tuned algorithm
@@ -141,8 +140,10 @@ class wine_recomender():
             test_time = time.time() - start_time
             print("Took {} seconds for un-tuned predictions.".format(test_time))    
             
-        # Get top-n predictions for all users
-        self.top_n_items, self.top_n_items_pd = self.get_top_n(predictions, n=5)
+        # Get top-k predictions for all users
+        top_k_items, top_k_items_pd = self.get_top_k(predictions, k=self.k_predictions)
+        
+        return top_k_items, top_k_items_pd, predictions
         
 
     def hyper_tune(self,tune_method='rmse'):
@@ -231,7 +232,7 @@ class wine_recomender():
         return precisions, recalls
 
 
-    def get_top_n(self,predictions, n=5):
+    def get_top_k(self,predictions, k=5):
         """Return the top-N recommendation for each user from a set of predictions.
     
         Args:
@@ -246,25 +247,25 @@ class wine_recomender():
         """
     
         # First map the predictions to each user.
-        top_n = defaultdict(list)
+        top_k = defaultdict(list)
         for uid, iid, true_r, est, _ in predictions:
-            top_n[uid].append((iid, est))
+            top_k[uid].append((iid, est))
     
         # Then sort the predictions for each user and retrieve the k highest ones.
-        for uid, user_ratings in top_n.items():
+        for uid, user_ratings in top_k.items():
             user_ratings.sort(key=lambda x: x[1], reverse=True)
-            top_n[uid] = user_ratings[:n]
+            top_k[uid] = user_ratings[:k]
             
         # Convert to DataFrame
-        top_n_pd = pd.DataFrame(columns=['Username', 'Wine', 'est'])
-        for uid, val in top_n.items():
+        top_k_pd = pd.DataFrame(columns=['Username', 'Wine', 'est'])
+        for uid, val in top_k.items():
             for subval in val:
                 iid, est = subval
                 values_to_add = {'Username':uid,'Wine':iid,'est':est}
                 row_to_add = pd.Series(values_to_add)
-                top_n_pd = top_n_pd.append(row_to_add,ignore_index=True)
+                top_k_pd = top_k_pd.append(row_to_add,ignore_index=True)
     
-        return top_n, top_n_pd
+        return top_k, top_k_pd
 
         
 class processed_wine_data():
