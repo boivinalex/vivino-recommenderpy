@@ -16,73 +16,6 @@ from surprise.model_selection import LeaveOneOut, KFold
 from surprise.model_selection import RandomizedSearchCV, cross_validate
 import time
 from collections import defaultdict
-# from reco_utils.dataset.python_splitters import python_stratified_split
-# from reco_utils.recommender.surprise.surprise_utils import predict, compute_ranking_predictions
-# from reco_utils.evaluation.python_evaluation import (rmse, mae, rsquared, exp_var,\
-#             map_at_k, ndcg_at_k, precision_at_k, recall_at_k, get_top_k_items)
-
-    
-class hyper_tune():
-    """Use surprise RandomizedSearchCV to tune hyperparameters."""
-    
-    def __init__(self,data_ml,tune_method='rmse'):
-        self.data_ml = data_ml
-        self.tune_method = tune_method
-        
-    def __call__(self,tune_method=None):
-        
-        if not tune_method:
-            tune_method = self.tune_method
-        
-        print('Tuning...')
-        # Seperate data into A and B sets for unbiased accuracy evaluation
-        raw_ratings = self.data_ml.raw_ratings
-        # shuffle ratings
-        random.shuffle(raw_ratings)
-        # A = 90% of the data, B = 10% of the data
-        threshold = int(.9 * len(raw_ratings))
-        A_raw_ratings = raw_ratings[:threshold]
-        B_raw_ratings = raw_ratings[threshold:]
-        # make data_ml the set A
-        data_ml = self.data_ml
-        data_ml.raw_ratings = A_raw_ratings  
-        # search grid
-        param_grid = {'n_factors': [50,100,150],'n_epochs': [30,50,70], 'lr_all': [0.002,0.005,0.01],'reg_all':[0.02,0.1,0.4,0.6]}
-        gs = RandomizedSearchCV(SVD, param_grid, measures=['rmse', 'mae', 'fcp'], cv=5)
-        # fit
-        start_time = time.time()
-        gs.fit(data_ml)
-        search_time = time.time() - start_time
-        print("Took {} seconds for search.".format(search_time))
-        # best score
-        print('Best score :' + str(gs.best_score[tune_method]))
-        # combination of parameters that gave the best RMSE score
-        print('Best params :' + str(gs.best_params[tune_method]))
-        
-        # get resulting algorithm with tuned parameters
-        algo = gs.best_estimator[tune_method]
-        
-        # retrain on the whole set A
-        trainset = data_ml.build_full_trainset()
-        algo.fit(trainset)
-        
-        # Compute biased accuracy on A
-        predictions = algo.test(trainset.build_testset())
-        print('Biased accuracy:')
-        accuracy.rmse(predictions)
-        accuracy.mae(predictions)
-        accuracy.fcp(predictions)
-        
-        # Compute unbiased accuracy on B
-        # make data_ml the set B
-        testset = data_ml.construct_testset(B_raw_ratings)
-        predictions = algo.test(testset)
-        print('Unbiased accuracy:')
-        accuracy.rmse(predictions)
-        accuracy.mae(predictions)
-        accuracy.fcp(predictions)
-        
-        return(algo)
     
 class wine_recomender():
     """Vivino collaborative filtering recomender system."""
@@ -98,8 +31,9 @@ class wine_recomender():
         # Cross validation
         # if tune, always compare tuned and un-tuned cross-validation results
         if self.tune:
-            tuner = hyper_tune(self.data_ml)
-            tuned_algo = tuner()
+            # tuner = hyper_tune(self.data_ml)
+            # tuned_algo = tuner()
+            tuned_algo = self.hyper_tune()
             # cross-validate with 4 folds corresponding to a 75/25 split
             # cross_validate(tuned_algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
         algo = SVD()
@@ -172,6 +106,59 @@ class wine_recomender():
         # Get top-n predictions for all users
         self.top_n_items, self.top_n_items_pd = self.get_top_n(predictions, n=5)
         
+
+    def hyper_tune(self,tune_method='rmse'):
+        print('Tuning...')
+        # Seperate data into A and B sets for unbiased accuracy evaluation
+        raw_ratings = self.data_ml.raw_ratings
+        # shuffle ratings
+        random.shuffle(raw_ratings)
+        # A = 90% of the data, B = 10% of the data
+        threshold = int(.9 * len(raw_ratings))
+        A_raw_ratings = raw_ratings[:threshold]
+        B_raw_ratings = raw_ratings[threshold:]
+        # make data_ml the set A
+        data_ml = self.data_ml
+        data_ml.raw_ratings = A_raw_ratings  
+        # search grid
+        param_grid = {'n_factors': [50,100,150],'n_epochs': [30,50,70], 'lr_all': [0.002,0.005,0.01],'reg_all':[0.02,0.1,0.4,0.6]}
+        gs = RandomizedSearchCV(SVD, param_grid, measures=['rmse', 'mae', 'fcp'], cv=5)
+        # fit
+        start_time = time.time()
+        gs.fit(data_ml)
+        search_time = time.time() - start_time
+        print("Took {} seconds for search.".format(search_time))
+        # best score
+        print('Best score: ' + str(gs.best_score[tune_method]))
+        # combination of parameters that gave the best RMSE score
+        print('Best params: ' + str(gs.best_params[tune_method]))
+        
+        # get resulting algorithm with tuned parameters
+        algo = gs.best_estimator[tune_method]
+        
+        # retrain on the whole set A
+        trainset = data_ml.build_full_trainset()
+        algo.fit(trainset)
+        
+        # Compute biased accuracy on A
+        predictions = algo.test(trainset.build_testset())
+        print('Biased accuracy:')
+        accuracy.rmse(predictions)
+        accuracy.mae(predictions)
+        accuracy.fcp(predictions)
+        
+        # Compute unbiased accuracy on B
+        # make data_ml the set B
+        testset = data_ml.construct_testset(B_raw_ratings)
+        predictions = algo.test(testset)
+        print('Unbiased accuracy:')
+        accuracy.rmse(predictions)
+        accuracy.mae(predictions)
+        accuracy.fcp(predictions)
+        
+        return(algo)
+        
+        
     def precision_recall_at_k(self,predictions, k=5, threshold=3.5):
         """Return precision and recall at k metrics for each user."""
     
@@ -204,7 +191,8 @@ class wine_recomender():
             recalls[uid] = n_rel_and_rec_k / n_rel if n_rel != 0 else 1
     
         return precisions, recalls
-    
+
+
     def get_top_n(self,predictions, n=5):
         """Return the top-N recommendation for each user from a set of predictions.
     
