@@ -14,6 +14,7 @@ from surprise import accuracy
 from surprise import Reader
 from surprise.model_selection import LeaveOneOut, KFold
 from surprise.model_selection import RandomizedSearchCV, cross_validate
+import surprise.model_selection.validation
 import time
 from collections import defaultdict
     
@@ -41,40 +42,77 @@ class wine_recomender():
         
         # cross-validate with 5 folds corresponding to a 80/20 split
         kf = KFold(n_splits=5)
+        # initialize cross-validation measures
+        measures = ['rmse','mae','preci.@k','recall@k']
+        if self.tune:
+            rmse_tuned_vals = []
+            mae_tuned_vals = []
+            precision_tuned_vals = []
+            recall_tuned_vals = []
+            train_time_tuned = []
+            test_time_tuned = []
+        rmse_vals = []
+        mae_vals = []
+        precision_vals = []
+        recall_vals = []
+        train_time = []
+        test_time = []
         
         for trainset, testset in kf.split(self.data_ml):
             # train and test algorithm
             if self.tune:
                 start_time = time.time()
                 tuned_algo.fit(trainset)
-                train_time = time.time() - start_time
-                print("Took {} seconds for tuned training.".format(train_time))
+                train_time_tuned.append(time.time() - start_time)
+                # print("Took {} seconds for tuned training.".format(train_time))
                 start_time = time.time()
                 tuned_predictions = tuned_algo.test(testset)
-                test_time = time.time() - start_time
-                print("Took {} seconds for tuned testing.".format(test_time))    
+                test_time_tuned.append(time.time() - start_time)
+                # print("Took {} seconds for tuned testing.".format(test_time))
             start_time = time.time()
             algo.fit(trainset)
-            train_time = time.time() - start_time
-            print("Took {} seconds for un-tuned training.".format(train_time))
+            train_time.append(time.time() - start_time)
+            # print("Took {} seconds for un-tuned training.".format(train_time))
             start_time = time.time()
-            global predictions
+            # global predictions
             predictions = algo.test(testset)
-            test_time = time.time() - start_time
-            print("Took {} seconds for un-tuned testing.".format(test_time))
+            test_time.append(time.time() - start_time)
+            # print("Took {} seconds for un-tuned testing.".format(test_time))
             
             # compute metrics
             if self.tune:
-                accuracy.rmse(tuned_predictions, verbose=True)
+                rmse_tuned_vals.append(accuracy.rmse(tuned_predictions,verbose=False))
+                mae_tuned_vals.append(accuracy.mae(tuned_predictions,verbose=False))
                 tuned_precisions, tuned_recalls = self.precision_recall_at_k(tuned_predictions, k=5, threshold=3.5)
                 # Precision and recall can then be averaged over all users
-                print(sum(prec for prec in tuned_precisions.values()) / len(tuned_precisions))
-                print(sum(rec for rec in tuned_recalls.values()) / len(tuned_recalls))
-            accuracy.rmse(predictions, verbose=True)
+                precision_tuned_vals.append(sum(prec for prec in tuned_precisions.values()) / len(tuned_precisions))
+                recall_tuned_vals.append(sum(rec for rec in tuned_recalls.values()) / len(tuned_recalls))
+            # accuracy.rmse(predictions, verbose=True)
+            rmse_vals.append(accuracy.rmse(predictions,verbose=False))
+            mae_vals.append(accuracy.mae(predictions,verbose=False))
             precisions, recalls = self.precision_recall_at_k(predictions)
             # Precision and recall can then be averaged over all users
-            print(sum(prec for prec in precisions.values()) / len(precisions))
-            print(sum(rec for rec in recalls.values()) / len(recalls))
+            precision_vals.append(sum(prec for prec in precisions.values()) / len(precisions))
+            recall_vals.append(sum(rec for rec in recalls.values()) / len(recalls))
+            # print(sum(prec for prec in precisions.values()) / len(precisions))
+            # print(sum(rec for rec in recalls.values()) / len(recalls))
+            
+        # print metrics
+        if self.tune:
+            test_measures_tuned_dict = {}
+            test_measures_tuned_list = [rmse_tuned_vals,mae_tuned_vals,precision_tuned_vals,recall_tuned_vals]
+        test_measures_dict = {}
+        test_measures_list = [rmse_vals,mae_vals,precision_vals,recall_vals]
+        for i, m in enumerate(measures):
+            if self.tune:
+                test_measures_tuned_dict[m] = test_measures_tuned_list[i]
+            test_measures_dict[m] = test_measures_list[i]
+        
+        if self.tune:
+            print('Tuned Cross-Validation Results:')
+            surprise.model_selection.validation.print_summary(tuned_algo,measures,test_measures_tuned_dict,None,train_time_tuned,test_time_tuned,5)
+        print('Un-tuned Cross-Validation Results:')
+        surprise.model_selection.validation.print_summary(algo,measures,test_measures_dict,None,train_time,test_time,5)
             
         # Make recomendations
         # only recomend using tuned OR un-tuned algorithm
