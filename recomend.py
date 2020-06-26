@@ -12,26 +12,29 @@ from surprise import SVD
 from surprise import Dataset
 from surprise import accuracy
 from surprise import Reader
-# from surprise.model_selection import LeaveOneOut, KFold
+from surprise.model_selection import LeaveOneOut, KFold
 from surprise.model_selection import RandomizedSearchCV, cross_validate
 import time
-from reco_utils.dataset.python_splitters import python_stratified_split
-from reco_utils.recommender.surprise.surprise_utils import predict, compute_ranking_predictions
-from reco_utils.evaluation.python_evaluation import (rmse, mae, rsquared, exp_var,\
-            map_at_k, ndcg_at_k, precision_at_k, recall_at_k, get_top_k_items)
+from collections import defaultdict
+# from reco_utils.dataset.python_splitters import python_stratified_split
+# from reco_utils.recommender.surprise.surprise_utils import predict, compute_ranking_predictions
+# from reco_utils.evaluation.python_evaluation import (rmse, mae, rsquared, exp_var,\
+#             map_at_k, ndcg_at_k, precision_at_k, recall_at_k, get_top_k_items)
 
     
 class hyper_tune():
     """Use surprise RandomizedSearchCV to tune hyperparameters."""
     
-    def __init__(self,data_ml,min_n_ratings=2):
+    def __init__(self,data_ml,min_n_ratings=2,tune_method='rmse'):
         # self.data = combined_processed_wine_data
         # self.data_ml = Dataset.load_from_df(self.data, reader=Reader(rating_scale=(1,5)))
         self.data_ml = data_ml
         self.min_n_ratings = min_n_ratings
+        self.tune_method = tune_method
         
     def __call__(self,min_n_ratings=2):
         
+        print('Tuning...')
         # Seperate data into A and B sets for unbiased accuracy evaluation
         raw_ratings = self.data_ml.raw_ratings
         # shuffle ratings
@@ -45,19 +48,19 @@ class hyper_tune():
         data_ml.raw_ratings = A_raw_ratings  
         # search grid
         param_grid = {'n_factors': [50,100,150],'n_epochs': [30,50,70], 'lr_all': [0.002,0.005,0.01],'reg_all':[0.02,0.1,0.4,0.6]}
-        gs = RandomizedSearchCV(SVD, param_grid, measures=['rmse', 'mae'], cv=4)#LeaveOneOut(n_splits=10,min_n_ratings=self.min_n_ratings))
+        gs = RandomizedSearchCV(SVD, param_grid, measures=['rmse', 'mae', 'fcp'], cv=5)
         # fit
         start_time = time.time()
         gs.fit(data_ml)
         search_time = time.time() - start_time
         print("Took {} seconds for search.".format(search_time))
-        # best RMSE score
-        print(gs.best_score['rmse'])
+        # best score
+        print(gs.best_score[self.tune_method])
         # combination of parameters that gave the best RMSE score
-        print(gs.best_params['rmse'])
+        print(gs.best_params[self.tune_method])
         
         # get resulting algorithm with tunned parameters
-        algo = gs.best_estimator['rmse']
+        algo = gs.best_estimator[self.tune_method]
         
         # retrain on the whole set A
         trainset = data_ml.build_full_trainset()
@@ -67,6 +70,8 @@ class hyper_tune():
         predictions = algo.test(trainset.build_testset())
         print('Biased accuracy,', end='   ')
         accuracy.rmse(predictions)
+        accuracy.mae(predictions)
+        accuracy.fcp(predictions)
         
         # Compute unbiased accuracy on B
         # make data_ml the set B
@@ -74,6 +79,8 @@ class hyper_tune():
         predictions = algo.test(testset)
         print('Unbiased accuracy,', end=' ')
         accuracy.rmse(predictions)
+        accuracy.mae(predictions)
+        accuracy.fcp(predictions)
         
         return(algo)
     
@@ -88,108 +95,156 @@ class wine_recomender():
         # self.data['Wine'] = self.data[['Winery','WineName']].apply(' - '.join,axis=1)
         # self.data = self.data[['Username','Wine','Rating']]
         
-        # cross validation
+        # Cross validation
+        # if tune, always compare tunned and un-tunned cross-validation results
         if self.tune:
             tunner = hyper_tune(self.data_ml)
             tunned_algo = tunner()
             # cross-validate with 4 folds corresponding to a 75/25 split
-            cross_validate(tunned_algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
+            # cross_validate(tunned_algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
         algo = SVD()
-        cross_validate(algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
-            
-        # Use reco_utils with surprise to do final train, test, and evaluation
-        # stratified split so that the same set of users will appear in both training and testing data sets since some users have few ratings
-        train, test = python_stratified_split(self.data,ratio=0.75,filter_by="user",col_user='Username',col_item='Wine')
-        train_set = Dataset.load_from_df(train, reader=Reader(rating_scale=(1, 5))).build_full_trainset()
+        # cross_validate(algo, self.data_ml, measures=['RMSE', 'MAE'], cv=4, verbose=True)
         
-        if self.tune:
+        # cross-validate with 5 folds corresponding to a 80/20 split
+        kf = KFold(n_splits=5)
+        
+        for trainset, testset in kf.split(self.data_ml):
+            # train and test algorithm
+            if self.tune:
+                start_time = time.time()
+                tunned_algo.fit(trainset)
+                train_time = time.time() - start_time
+                print("Took {} seconds for tunned training.".format(train_time))
+                start_time = time.time()
+                tunned_predictions = tunned_algo.test(testset)
+                test_time = time.time() - start_time
+                print("Took {} seconds for tunned testing.".format(test_time))    
             start_time = time.time()
-            tunned_algo.fit(train_set)
+            algo.fit(trainset)
             train_time = time.time() - start_time
-            print("Took {} seconds for tunned training.".format(train_time))
-            
+            print("Took {} seconds for un-tunned training.".format(train_time))
             start_time = time.time()
-            tunned_predictions = predict(tunned_algo,test,usercol='Username', itemcol='Wine')
+            global predictions
+            predictions = algo.test(testset)
             test_time = time.time() - start_time
-            print("Took {} seconds for tunned testing.".format(test_time))
+            print("Took {} seconds for un-tunned testing.".format(test_time))
             
-            start_time = time.time()
-            tunned_all_predictions = compute_ranking_predictions(tunned_algo, train, usercol='Username', itemcol='Wine',remove_seen=True)
-            test_time = time.time() - start_time
-            print("Took {} seconds for tunned  all predictions testing.".format(test_time))
+            # compute metrics
+            if self.tune:
+                accuracy.rmse(tunned_predictions, verbose=True)
+                tunned_precisions, tunned_recalls = self.precision_recall_at_k(tunned_predictions, k=5, threshold=3.5)
+                # Precision and recall can then be averaged over all users
+                print(sum(prec for prec in tunned_precisions.values()) / len(tunned_precisions))
+                print(sum(rec for rec in tunned_recalls.values()) / len(tunned_recalls))
+            accuracy.rmse(predictions, verbose=True)
+            precisions, recalls = self.precision_recall_at_k(predictions)
+            # Precision and recall can then be averaged over all users
+            print(sum(prec for prec in precisions.values()) / len(precisions))
+            print(sum(rec for rec in recalls.values()) / len(recalls))
             
-        start_time = time.time()
-        algo.fit(train_set)
-        train_time = time.time() - start_time
-        print("Took {} seconds for un-tunned training.".format(train_time))
-        
-        start_time = time.time()
-        predictions = predict(algo,test,usercol='Username', itemcol='Wine')
-        test_time = time.time() - start_time
-        print("Took {} seconds for un-tunned testing.".format(test_time))
-        
-        start_time = time.time()
-        all_predictions = compute_ranking_predictions(algo, train, usercol='Username', itemcol='Wine',remove_seen=True)
-        test_time = time.time() - start_time
-        print("Took {} seconds for un-tunned all predictions testing.".format(test_time))
-        
+        # Make recomendations
+        # only recomend using tunned OR un-tunned algorithm
+        full_trainset = self.data_ml.build_full_trainset()
         if self.tune:
-            eval_rmse = rmse(test, tunned_predictions, col_user='Username', col_item='Wine', col_rating='Rating')
-            eval_mae = mae(test, tunned_predictions, col_user='Username', col_item='Wine', col_rating='Rating')
-            eval_rsquared = rsquared(test, tunned_predictions, col_user='Username', col_item='Wine', col_rating='Rating')
-            eval_exp_var = exp_var(test, tunned_predictions, col_user='Username', col_item='Wine', col_rating='Rating')
+            start_time = time.time()
+            tunned_algo.fit(full_trainset)
+            train_time = time.time() - start_time
+            print("Took {} seconds for tunned full training.".format(train_time))
+        else:
+            start_time = time.time()
+            algo.fit(full_trainset)
+            train_time = time.time() - start_time
+            print("Took {} seconds for un-tunned full training.".format(train_time))
+        
+        # all user-item pairs with no rating in the trainset
+        anti_testset = trainset.build_anti_testset()
+        if self.tune:
+            start_time = time.time()
+            predictions = tunned_algo.test(anti_testset)
+            test_time = time.time() - start_time
+            print("Took {} seconds for tunned predictions.".format(test_time))    
+        else:
+            start_time = time.time()
+            predictions = algo.test(anti_testset)
+            test_time = time.time() - start_time
+            print("Took {} seconds for un-tunned predictions.".format(test_time))    
             
-            k=5
-            eval_map = map_at_k(test, tunned_all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
-            eval_ndcg = ndcg_at_k(test, tunned_all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
-            eval_precision = precision_at_k(test, tunned_all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
-            eval_recall = recall_at_k(test, tunned_all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
+        # Get top-n predictions for all users
+        self.top_n_items, self.top_n_items_pd = self.get_top_n(predictions, n=5)
+        
+    def precision_recall_at_k(self,predictions, k=5, threshold=3.5):
+        """Return precision and recall at k metrics for each user."""
+    
+        # First map the predictions to each user.
+        user_est_true = defaultdict(list)
+        for uid, _, true_r, est, _ in predictions:
+            user_est_true[uid].append((est, true_r))
+    
+        precisions = dict()
+        recalls = dict()
+        for uid, user_ratings in user_est_true.items():
+    
+            # Sort user ratings by estimated value
+            user_ratings.sort(key=lambda x: x[0], reverse=True)
+    
+            # Number of relevant items
+            n_rel = sum((true_r >= threshold) for (_, true_r) in user_ratings)
+    
+            # Number of recommended items in top k
+            n_rec_k = sum((est >= threshold) for (est, _) in user_ratings[:k])
+    
+            # Number of relevant and recommended items in top k
+            n_rel_and_rec_k = sum(((true_r >= threshold) and (est >= threshold))
+                                  for (est, true_r) in user_ratings[:k])
+    
+            # Precision@K: Proportion of recommended items that are relevant
+            precisions[uid] = n_rel_and_rec_k / n_rec_k if n_rec_k != 0 else 1
+    
+            # Recall@K: Proportion of relevant items that are recommended
+            recalls[uid] = n_rel_and_rec_k / n_rel if n_rel != 0 else 1
+    
+        return precisions, recalls
+    
+    def get_top_n(self,predictions, n=5):
+        """Return the top-N recommendation for each user from a set of predictions.
+    
+        Args:
+            predictions(list of Prediction objects): The list of predictions, as
+                returned by the test method of an algorithm.
+            n(int): The number of recommendation to output for each user. Default
+                is 10.
+    
+        Returns:
+        A dict where keys are user (raw) ids and values are lists of tuples:
+            [(raw item id, rating estimation), ...] of size n.
+        """
+    
+        # First map the predictions to each user.
+        top_n = defaultdict(list)
+        for uid, iid, true_r, est, _ in predictions:
+            top_n[uid].append((iid, est))
+    
+        # Then sort the predictions for each user and retrieve the k highest ones.
+        for uid, user_ratings in top_n.items():
+            user_ratings.sort(key=lambda x: x[1], reverse=True)
+            top_n[uid] = user_ratings[:n]
             
-            print('Tunned evaluations:')
-            
-            print("RMSE:\t\t%f" % eval_rmse,
-                  "MAE:\t\t%f" % eval_mae,
-                  "rsquared:\t%f" % eval_rsquared,
-                  "exp var:\t%f" % eval_exp_var, sep='\n')
-            
-            print('----')
-            
-            print("K = {}".format(k),
-                  "MAP@K:\t%f" % eval_map,
-                  "NDCG@K:\t%f" % eval_ndcg,
-                  "Precision@K:\t%f" % eval_precision,
-                  "Recall@K:\t%f" % eval_recall, sep='\n')
-        
-        eval_rmse = rmse(test, predictions, col_user='Username', col_item='Wine', col_rating='Rating')
-        eval_mae = mae(test, predictions, col_user='Username', col_item='Wine', col_rating='Rating')
-        eval_rsquared = rsquared(test, predictions, col_user='Username', col_item='Wine', col_rating='Rating')
-        eval_exp_var = exp_var(test, predictions, col_user='Username', col_item='Wine', col_rating='Rating')
-        
-        k=5
-        eval_map = map_at_k(test, all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
-        eval_ndcg = ndcg_at_k(test, all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
-        eval_precision = precision_at_k(test, all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
-        eval_recall = recall_at_k(test, all_predictions, col_user='Username', col_item='Wine', col_rating='Rating', col_prediction='prediction', k=k)
-        
-        print('Un-tunned evaluations:')
-        
-        print("RMSE:\t\t%f" % eval_rmse,
-              "MAE:\t\t%f" % eval_mae,
-              "rsquared:\t%f" % eval_rsquared,
-              "exp var:\t%f" % eval_exp_var, sep='\n')
-        
-        print('----')
-        
-        print("K = {}".format(k),
-              "MAP@K:\t%f" % eval_map,
-              "NDCG@K:\t%f" % eval_ndcg,
-              "Precision@K:\t%f" % eval_precision,
-              "Recall@K:\t%f" % eval_recall, sep='\n')
+        # Convert to DataFrame
+        top_n_pd = pd.DataFrame(columns=['Username', 'Wine', 'est'])
+        for uid, val in top_n.items():
+            for subval in val:
+                iid, est = subval
+                values_to_add = {'Username':uid,'Wine':iid,'est':est}
+                row_to_add = pd.Series(values_to_add)
+                top_n_pd = top_n_pd.append(row_to_add,ignore_index=True)
+    
+        return top_n, top_n_pd
+
         
 class processed_wine_data():
     """Filter data from wine_data instance."""
     
-    def __init__(self,wine_data,min_number_of_reviews=3):
+    def __init__(self,wine_data,min_number_of_reviews=10):
         """
         Filter data from wine_data instance.
 
