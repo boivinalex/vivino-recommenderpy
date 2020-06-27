@@ -92,8 +92,11 @@ class processed_wine_data():
         # Keep data only from users who have made multiple reviews
         # average ratings for users who rated same wine multiple times. also removes nans and blank names
         cleaned_review_data_df = self.wine_data.review_data.groupby(['Username','WineName','Winery'],as_index=False).mean()
-        # remove anonymous reviews
+        # remove anonymous reviews 1
         anonymous_index_vals = cleaned_review_data_df[cleaned_review_data_df['Username'] == 'Vivino User'].index
+        cleaned_review_data_df.drop(anonymous_index_vals,inplace=True)
+        # remove anonymous reviews 2
+        anonymous_index_vals = cleaned_review_data_df[cleaned_review_data_df['Username'] == 'Vivino'].index
         cleaned_review_data_df.drop(anonymous_index_vals,inplace=True)
         print('Total cleaned reviews: {}'.format(len(cleaned_review_data_df)))
         # count number of wines
