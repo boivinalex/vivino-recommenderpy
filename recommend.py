@@ -123,21 +123,21 @@ class processed_wine_data():
             ratings_from_filtered_users_df, combined_ratings_from_filtered_users_df
           
   
-class wine_recomender():
-    """Vivino collaborative filtering recomender system."""
+class wine_recommender():
+    """Vivino collaborative filtering recommender system."""
     
     def __init__(self,processed_wine_data,n_splits=5,k_predictions=5,\
                  tune=False,tune_method='rmse'):
         """
-        Single Value Decomposition-based wine recomender system for Vivino.
+        Single Value Decomposition-based wine recommender system for Vivino.
         
-        Recomend new wines to users based on reviews posted on Vivino using SVD.
+        Recommend new wines to users based on reviews posted on Vivino using SVD.
         Fit is cross-validated using KFold cross-validation. Model 
         hyperparameters can be automatically tuned using the Surprise package.
         Tuning aims to improve fit but may yeild worse results (check!). Tuning
         can aim to improve any of the accuracy metrics used by Surprise. After
         (optionally) tuning and cross-validation, fit is perfromed on all data
-        to produce recomendations for all users in the data set.
+        to produce recommendations for all users in the data set.
 
         Parameters
         ----------
@@ -147,7 +147,7 @@ class wine_recomender():
             Number of splits or folds to perform in cross-validation step. 
             The default is 5.
         k_predictions : int, optional
-            Number of wine recomendations to make. The default is 5.
+            Number of wine recommendations to make. The default is 5.
         tune : bool, optional
             If True, automatically tune hyperparameters. The default is False.
         tune_method : str, optional
@@ -158,10 +158,10 @@ class wine_recomender():
         Attributes
         ----------
         top_k_items : defaultdict
-            Top k_predictions wines recomended to each user in the data set in
+            Top k_predictions wines recommended to each user in the data set in
             the form of a defaultdict where the key coresponds to the users.
         top_k_items_pd : DataFrame
-            Top k_predictions wines recomended to each user in the data set in
+            Top k_predictions wines recommended to each user in the data set in
             the form of a pandas DataFrame with columns: Username, Wine, est. 
             Where est is the predicted rating of that wine for that user.
         all_predictions : list of surprise.prediction_algorithms.predictions.Prediction objects
@@ -190,9 +190,9 @@ class wine_recomender():
         Returns
         -------
         top_k_items : defaultdict
-            Top k recomended wines.
+            Top k recommended wines.
         top_k_items_pd : DataFrame
-            Top k recomended wines. Columns: Username, Wine, est.
+            Top k recommended wines. Columns: Username, Wine, est.
         predictions : list of surprise.prediction_algorithms.predictions.Prediction objects
             All rating predictions for all users and all wines.
 
@@ -279,8 +279,8 @@ class wine_recomender():
         print('Un-tuned Cross-Validation Results:')
         surprise.model_selection.validation.print_summary(algo,measures,test_measures_dict,None,train_time,test_time,self.n_splits)
             
-        # Make recomendations
-        # only recomend using tuned OR un-tuned algorithm
+        # Make recommendations
+        # only recommend using tuned OR un-tuned algorithm
         # train on the full data set
         full_trainset = self.data_ml.build_full_trainset()
         if self.tune:
@@ -294,7 +294,7 @@ class wine_recomender():
             train_time = time.time() - start_time
             print("Took {} seconds for un-tuned full training.".format(train_time))
         
-        # all user-item pairs with no rating in the trainset (don't recomend already rated wines)
+        # all user-item pairs with no rating in the trainset (don't recommend already rated wines)
         anti_testset = trainset.build_anti_testset()
         if self.tune:
             start_time = time.time()
@@ -317,7 +317,7 @@ class wine_recomender():
         """
         Use Surprises RandomizedSearchCV to tune SVD model hyperparameters.
         
-        As recomended by https://surprise.readthedocs.io/en/stable/FAQ.html ,
+        As recommended by https://surprise.readthedocs.io/en/stable/FAQ.html ,
         split the data set into an A and B set to allow for unbiased accuracy
         evaluation of the tuned parameters.
         
@@ -447,9 +447,9 @@ class wine_recomender():
         Returns
         -------
         top_k : defaultdict
-            Top k recomended wines. Keys are users.
+            Top k recommended wines. Keys are users.
         top_k_pd : DataFrame
-            Top k recomended wines. Columns: Username, Wine, est.
+            Top k recommended wines. Columns: Username, Wine, est.
 
         """
         # Value of k
