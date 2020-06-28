@@ -1,4 +1,4 @@
-# vivino-recomenderpy
+# vivino-recommenderpy
  A personal project to scrape data from Vivino and use a recommender system to recommend new wines.
 
 A collaborative filtering Single Value Decomposition (SVD) -based wine recommender system to recommend new wines to users based on reviews posted on the wine rating app Vivino.com. 
