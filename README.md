@@ -13,9 +13,9 @@ Data set is obtained by scraping Vivino.com using the selenium package.
 #### Data scraping (scrape.py)
 This script uses Firefox and requires the appropriate driver (see the [docs](https://selenium-python.readthedocs.io/installation.html#drivers)).
 
-The wine_data class is used to acquire and
+The wine_data class is used to acquire and save data.
 
-Search for a subset of wines on Vivino, scrape wine names and user ratings. Note that not all user ratings are shown on Vivino.com. Ratings with no text for example, do not seem to ever be shown. All scrape country, overall rating, total number of ratings, and price (not currently used in recommendation).
+Search for a subset of wines on Vivino, then scrape wine names and user ratings. Note that not all user ratings are shown on Vivino.com. Ratings with no text for example, do not seem to ever be shown. Also scrape country, overall rating, total number of ratings, and price (not currently used in recommendation).
 
 Results are stored in an instance of the wine_data class.
 
