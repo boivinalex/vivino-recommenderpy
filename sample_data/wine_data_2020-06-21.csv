@@ -1,0 +1,782 @@
+,WineName,Winery,Country,Rating,NumberOfRatings,Price
+0,Clos de Tafall 2017,Clos Berenguer,Spain,4.2,492 ratings,23.0
+1,Montessu 2017,Punica,Italy,4.2,362 ratings,34.95
+2,Barrique Select Tinto 2016,Herdade do Sobroso,Portugal,4.2,154 ratings,16.04
+3,Sammarcello Pignatello 2015,Barone di Serramarrocco,Italy,4.2,112 ratings,22.76
+4,Speck Family Reserve Baco Noir 2018,Henry of Pelham,Canada,4.2,61 ratings,24.75
+5,Cellar Hand Punch Down Red 2015,Black Hills Estate,Canada,4.2,55 ratings,22.95
+6,Duca Sanfelice Cirò Classico Superiore Riserva Rosso 2017,Librandi,Italy,4.2,38 ratings,14.36
+7,Pinot Noir 2018,Meiomi,United States,4.1,1565 ratings,19.98
+8,Reserva 2015,Muga,Spain,4.1,3612 ratings,23.0
+9,Ripassa Valpolicella Ripasso Superiore 2016,Zenato,Italy,4.1,3240 ratings,21.0
+10,Red Blend 2017,Conundrum,United States,4.1,3010 ratings,20.0
+11,Angels' Share Shiraz 2018,Two Hands,Australia,4.1,1763 ratings,21.95
+12,Negroamaro 2017,Luccarelli,Italy,4.1,5995 ratings,16.99
+13,Crasto Superior Red 2016,Quinta do Crasto,Portugal,4.1,1444 ratings,22.76
+14,Cabernet Sauvignon 2018,Tom Gore,United States,4.1,769 ratings,22.99
+15,Brickmason 2016,Klinker Brick,United States,4.1,643 ratings,25.49
+16,Conde d'Ervideira Reserva Tinto 2017,Ervideira,Portugal,4.1,571 ratings,21.23
+17,Cerasuolo Di Vittoria 2017,Gulfi,Italy,4.1,447 ratings,24.29
+18,Mendocino County Zinfandel 2015,Edmeades,United States,4.1,425 ratings,22.0
+19,Valley Floor Shiraz 2017,Langmeil,Australia,4.1,393 ratings,23.0
+20,Montagne-Saint-Émilion 2015,Château Tour Bayard,France,4.1,381 ratings,22.0
+21,Soltema Primitivo del Salento 2016,Antica Masseria Jorche,Italy,4.1,160 ratings,22.74
+22,Aglianico del Vulture 2013,Quarta Generazione,Italy,4.1,128 ratings,22.61
+23,Tinto 2015,Quinta do Côa,Portugal,4.1,108 ratings,24.97
+24,Tyto Alba Touriga Nacional 2015,Companhia das Lezírias,Portugal,4.1,101 ratings,16.8
+25,Nativae Montepulciano D'Abruzzo 2016,Tenuta Ulisse,Italy,4.1,79 ratings,24.29
+26,Rosso di Montalcino 2018,Ciacci Piccolomini d'Aragona,Italy,4.1,63 ratings,22.15
+27,Chianti Classico 2015,Setriolo,Italy,4.1,62 ratings,21.85
+28,Barbera d'Alba Superiore 2017,Boasso,Italy,4.1,51 ratings,17.72
+29,Malbec 2018,Claroscuro Bodega de Arte,Argentina,4.1,34 ratings,22.95
+30,Vidente 2016,Mira do Ó,Portugal,4.1,30 ratings,15.12
+31,Rover Shiraz - Viognier 2017,See Ya Later Ranch,Canada,4.1,26 ratings,21.99
+32,Guarda Rios Signature Tinto 2018,Vale d'Algares,Portugal,4.0,1409 ratings,19.99
+33,Estates Seven Oaks Cabernet Sauvignon 2017,J. Lohr,United States,4.0,7588 ratings,23.99
+34,Pinot Noir 2017,Bread & Butter,United States,4.0,5709 ratings,22.99
+35,Tres Picos Garnacha 2016,Borsao,Spain,4.0,3851 ratings,27.49
+36,Barossa Ink Shiraz 2016,Grant Burge,Australia,4.0,3421 ratings,14.25
+37,Red (Shiraz - Grenache - Mataro) 2017,19 Crimes,Australia,4.0,11340 ratings,16.5
+38,Syrah 2017,Les Jamelles,France,4.0,1200 ratings,17.14
+39,Rosso Veneto 2018,Gran Passione,Italy,4.0,1100 ratings,21.99
+40,Shiraz 2015,Heartland,Australia,4.0,1079 ratings,22.99
+41,Petite Sirah 2018,McManis,United States,4.0,877 ratings,24.47
+42,Hito 2017,Cepa 21,Spain,4.0,863 ratings,26.12
+43,Aska Bolgheri 2016,Banfi,Italy,4.0,809 ratings,24.74
+44,Felino Cabernet Sauvignon 2018,Viña Cobos,Argentina,4.0,767 ratings,21.25
+45,Valle Escondido Reserva Malbec 2016,Gouguenheim,Argentina,4.0,763 ratings,18.75
+46,Atteca Garnacha (Old Vines) 2016,Bodegas Ateca,Spain,4.0,723 ratings,20.5
+47,Guarda Blend 2014,Lagarde,Argentina,4.0,568 ratings,24.0
+48,Côtes de Provence (Cru Classé) 2016,Rimauresq,France,4.0,494 ratings,24.14
+49,Nerojbleo 2015,Gulfi,Italy,4.0,483 ratings,23.68
+50,Terroir Hunter Carignan (T.H.) 2014,Undurraga,Chile,4.0,465 ratings,23.0
+51,Orfeo Negroamaro 2016,Paololeo,Italy,4.0,397 ratings,24.29
+52,Domaine de Bila-Haut l'Esquerda Côtes du Roussillon Villages 2017,M. Chapoutier,France,4.0,364 ratings,23.0
+53,Alentejano Tinto 2018,Fitapreta,Portugal,4.0,329 ratings,23.87
+54,Cabernet Sauvignon 2017,Frei Brothers,United States,4.0,318 ratings,23.0
+55,Grand Classique Red Blend 2015,Glen Carlou,South Africa,4.0,310 ratings,24.24
+56,Dez Tostões Tinto 2018,Herdade da Maroteira,Portugal,4.0,249 ratings,18.18
+57,Ripasso Valpolicella Superiore 2015,Viviani,Italy,4.0,231 ratings,19.4
+58,Old Vines Grenache - Shiraz - Mourvedre 2017,Torbreck,Australia,4.0,202 ratings,25.49
+59,Carmenère Reserva 2017,Falernia,Chile,4.0,201 ratings,22.99
+60,Côtes Du Rhône Villages 2014,Château de la Gardine,France,4.0,181 ratings,23.0
+61,Petite Sirah 2017,Ironstone,United States,4.0,176 ratings,23.49
+62,Wheelhouse Zinfandel 2015,Sextant,United States,4.0,153 ratings,19.75
+63,Le Farnete Carmignano 2016,Pierazzuoli,Italy,4.0,123 ratings,18.18
+64,Cabernet Sauvignon 2018,Lyeth,United States,4.0,123 ratings,24.99
+65,Chavignol Sancerre Rouge 2016,Domaine Delaporte,France,4.0,103 ratings,22.15
+66,Tradition Côtes-du-Rhône-Villages 'Seguret' 2016,Mourchon,France,4.0,102 ratings,23.95
+67,Beyer Ranch Zinfandel 2016,Wente,United States,4.0,101 ratings,20.99
+68,Gran Reserva de Los Andes Carménère 2017,Doña Dominga,Chile,4.0,98 ratings,13.5
+69,Chianti Classico 2012,Solatione,Italy,4.0,94 ratings,20.45
+70,Hangin' Snakes Shiraz - Viognier 2017,Langmeil,Australia,4.0,91 ratings,24.99
+71,Pegrandi Valpolicella Ripasso Classico Superiore 2017,Vaona,Italy,4.0,90 ratings,23.1
+72,Reserve Tinto 2014,Exlibris Baco,Portugal,4.0,83 ratings,19.1
+73,Liberalitas Tinto 2015,Vinha das Virtudes,Portugal,4.0,64 ratings,12.98
+74,Carretal 2014,Cailhol Gautran,France,4.0,56 ratings,17.72
+75,Cuvée Marguerite Côtes du Rhône 2017,Domaine de Cabasse,France,4.0,50 ratings,20.99
+76,170 Perricone 2017,Terre di Gratia,Italy,4.0,46 ratings,17.57
+77,Chinon 2018,Domaine de La Noblaie,France,4.0,44 ratings,24.99
+78,La Source 2017,Saint Jean du Barroux,France,4.0,39 ratings,19.84
+79,Cabernet - Merlot 2017,Cedar Creek Estate Winery,Canada,4.0,34 ratings,20.99
+80,Merlot 2016,Young & Wyse Collection,Canada,4.0,32 ratings,24.9
+81,Sogno Mediterraneo (Mediterranean Blend) 2017,Casadei,Italy,4.0,31 ratings,24.44
+82,Bench Red 2018,Three Sisters,Canada,4.0,28 ratings,19.04
+83,Pinot Noir 2018,Manos Negras,Argentina,4.0,27 ratings,19.99
+84,Speck Family Reserve Pinot Noir 2017,Henry of Pelham,Canada,4.0,26 ratings,24.95
+85,Montefalco Rosso 2016,Cantina Roccafiore,Italy,4.0,25 ratings,22.15
+86,Diamond Collection Cabernet Sauvignon (Ivory Label) 2017,Francis Ford Coppola,United States,3.9,3841 ratings,30.0
+87,Primitivo 2017,Luccarelli,Italy,3.9,4705 ratings,18.99
+88,Sangiovese Toscana 2016,Caparzo,Italy,3.9,2644 ratings,21.49
+89,Cabernet Sauvignon 2017,Liberty School,United States,3.9,2132 ratings,23.99
+90,Della Casa N.V.,Loredan Gasparini,Italy,3.9,1875 ratings,24.5
+91,Tinto 2012,Cortes de Cima,Portugal,3.9,1770 ratings,20.5
+92,Guarda Rios Tinto 2018,Vale d'Algares,Portugal,3.9,1427 ratings,14.99
+93,Los Osos Merlot 2016,J. Lohr,United States,3.9,1113 ratings,24.0
+94,Cabernet Sauvignon 2017,Cannonball,United States,3.9,856 ratings,32.77
+95,Reserva Vendimia Seleccionada 2011,Muriel,Spain,3.9,810 ratings,20.5
+96,Baco Noir 2018,Henry of Pelham,Canada,3.9,769 ratings,15.95
+97,El Picaro 2019,Matsu,Spain,3.9,746 ratings,19.95
+98,Maremma Toscana Mongrana 2016,Querciabella,Italy,3.9,734 ratings,23.0
+99,Red Blend 2018,Silk & Spice,Portugal,3.9,699 ratings,18.52
+100,Syrah 2018,Cusumano,Italy,3.8,691 ratings,20.49
+101,Guarda Malbec 2017,Lagarde,Argentina,3.9,661 ratings,24.0
+102,La Ladra Barbera d'Asti Superiore N.V.,Tenute dei Vallarino,Italy,3.9,661 ratings,21.98
+103,Jester Shiraz 2015,Mitolo,Australia,3.9,649 ratings,22.95
+104,Château Cambon Beaujolais 2018,Domaine Mathieu & Camille Lapierre,France,3.9,591 ratings,24.75
+105,Cabernet Sauvignon 2016,Chasing Lions,United States,3.9,534 ratings,20.75
+106,Caburnio 2013,Tenuta Monteti,Italy,3.9,530 ratings,37.37
+107,Primitivo 2017,Feudi di San Gregorio,Italy,3.9,482 ratings,22.99
+108,Côtes du Roussillon 2016,Domaine Guisset,France,3.9,457 ratings,19.99
+109,Caburnio 2012,Tenuta Monteti,Italy,3.9,435 ratings,23.39
+110,Il Grigio Chianti Classico Riserva 2016,San Felice,Italy,3.9,427 ratings,20.93
+111,Cabernet Sauvignon Reserva 2014,Sottano,Argentina,3.9,378 ratings,21.0
+112,Ventoux Quintessence 2017,Château Pesquie,France,3.9,356 ratings,28.84
+113,L'U Umbria Rosso 2016,Lungarotti,Italy,3.9,344 ratings,24.95
+114,Scaia Paradiso 2017,Tenuta Sant'Antonio,Italy,3.9,346 ratings,17.41
+115,Bolgheri Rosso 2018,Tenuta Campo al Mare,Italy,3.9,310 ratings,24.29
+116,The Formula Robert's Shiraz 2015,Small Gully,Australia,3.9,304 ratings,18.99
+117,Barossa Ink Cabernet Sauvignon 2017,Grant Burge,Australia,3.9,295 ratings,18.0
+118,Bonarda 2017,Durigutti,Argentina,3.9,288 ratings,22.99
+119,Malbec Premium Reserve 2017,Piattelli,Argentina,3.9,285 ratings,20.99
+120,Langhe Nebbiolo 2017,De Forville,Italy,3.9,278 ratings,19.71
+121,Hacienda de Arínzano Tinto 2014,Arínzano,Spain,3.9,277 ratings,22.0
+122,Vinsobres Les Cornuds 2017,Famille Perrin,France,3.9,268 ratings,24.37
+123,Barbaresco 2015,Batasiolo,Italy,3.9,263 ratings,23.0
+124,La Gemella Barbera d’Alba 2018,Viberti Giovanni,Italy,3.9,258 ratings,24.95
+125,I Bastioni Chianti Classico 2016,Collazzi,Italy,3.9,247 ratings,22.0
+126,Etna Rosso 2017,Barone di Villagrande,Italy,3.9,245 ratings,21.23
+127,Dasempre del Pozzo Buono Lacrima di Morro d'Alba 2018,Vicari,Italy,3.9,209 ratings,15.73
+128,Signos de Origen Cabernet Sauvignon 2016,Emiliana,Chile,3.9,188 ratings,20.25
+129,Les Terrasses Régis Boucabeille Rouge 2017,Domaine Boucabeille,France,3.9,188 ratings,21.99
+130,Argenina Chianti Classico 2015,Podere Il Palazzino,Italy,3.9,185 ratings,24.75
+131,Shotfire Quartage 2015,Thorn-Clarke,Australia,3.9,180 ratings,21.75
+132,Sant Andrea Primitivo 2018,Cantine Paradiso,Italy,3.9,181 ratings,22.95
+133,Gaurano Rosso 2014,Moio,Italy,3.9,176 ratings,18.94
+134,Tinto 2017,Arrepiado Velho,Portugal,3.9,168 ratings,25.0
+135,Three Gardens Shiraz - Mourvèdre - Grenache 2015,Langmeil,Australia,3.9,164 ratings,20.5
+136,Botrosecco Maremma Toscana 2017,Le Mortelle,Italy,3.9,161 ratings,22.76
+137,Sposa e Sposa 2014,Heartland,Australia,3.9,157 ratings,21.99
+138,Pinot Noir 2017,Bistro,France,3.9,147 ratings,24.0
+139,Preziosaterra 2014,Tenuta Montecchiesi,Italy,3.9,144 ratings,19.25
+140,Alfrocheiro 2015,Titular,Portugal,3.9,139 ratings,19.86
+141,Cabernet Sauvignon 2016,Heavyweight,United States,3.9,138 ratings,24.95
+142,Montepulciano 2017,Emotivo,Italy,3.9,125 ratings,16.99
+143,Evolution (E) Pinot Noir 2018,Sokol Blosser,United States,3.9,123 ratings,23.99
+144,Merlot 2017,Ironstone,United States,3.9,122 ratings,19.99
+145,Ruben & Flora Reserva 2017,Viña Tinajas,Chile,3.9,122 ratings,19.91
+146,Cabernet Sauvignon 2016,Rock & Vine,United States,3.9,119 ratings,20.5
+147,Berola 2016,Borsao,Spain,3.9,119 ratings,23.99
+148,Rosso Conero 2016,Le Terrazze,Italy,3.9,114 ratings,18.18
+149,Cabernet Sauvignon 2018,Ironstone,United States,3.9,109 ratings,19.99
+150,Cheverny Rouge 2018,Domaine du Salvard,France,3.9,99 ratings,22.99
+151,Shiraz Shiraz Shiraz 2017,Tscharke,Australia,3.9,98 ratings,23.99
+152,Langhe Nebbiolo 2017,Cantina del Pino,Italy,3.9,98 ratings,23.0
+153,საფერავი (Saperavi) 2017,Vazisubani Estate (ვაზისუბნის მამული),Georgia,3.9,97 ratings,23.99
+154,Alceo Tempranillo 2017,Familia Bastida,Spain,3.9,95 ratings,18.52
+155,Pinot Noir 2017,Andreas Bender,Germany,3.9,90 ratings,24.99
+156,Night Moves Gamay Noir 2017,Rosewood Estates,Canada,3.9,88 ratings,27.6
+157,Oinos Montepulciano d'Abruzzo Colline Teramane 2011,San Lorenzo,Italy,3.9,85 ratings,23.37
+158,Le Combal Cahors 2016,Cosse Maisonneuve,France,3.9,84 ratings,20.15
+159,Terra Barossa Cabernet Sauvignon 2015,Thorn-Clarke,Australia,3.9,82 ratings,17.25
+160,Cabernet Sauvignon 2016,Hoopla,United States,3.9,79 ratings,23.19
+161,Sileno Ciliegiolo 2015,Sator,Italy,3.9,78 ratings,22.15
+162,Cabernet Franc 2017,Featherstone Estate,Canada,3.9,76 ratings,20.15
+163,Anel Reserva 2017,Marcio Lopes,Portugal,3.9,75 ratings,15.28
+164,Plansel Selecta 2018,Quinta da Plansel,Portugal,3.9,75 ratings,19.99
+165,Pinot Noir 2016,Cedar Creek Estate Winery,Canada,3.9,69 ratings,23.0
+166,Crianza 2016,Ortega Ezquerro,Spain,3.9,70 ratings,24.99
+167,Tramonti Costa d'Amalfi Rosso 2017,Tenuta San Francesco,Italy,3.9,68 ratings,22.91
+168,Generation Bordeaux Supérieur 2015,Château Le Grand Verdus,France,3.9,67 ratings,24.95
+169,Bordeaux Supérieur Merlot 2015,Domaine Émile Grelier,France,3.9,62 ratings,15.26
+170,Dolomite Cabernet Franc 2017,Cave Spring,Canada,3.9,60 ratings,24.95
+171,Caccia al Palazzo Bolgheri Rosso 2018,Tenuta Di Vaira,Italy,3.9,60 ratings,22.91
+172,Montescudaio 2017,Sator,Italy,3.9,58 ratings,13.6
+173,Douro Dourosa Red 2017,Quinta de La Rosa,Portugal,3.9,58 ratings,19.95
+174,Chianti Colli Fiorentini 2014,Ottomani,Italy,3.9,56 ratings,16.65
+175,Canaiolo 2015,Vallone di Cecione,Italy,3.9,52 ratings,22.76
+176,Old Vine Garnacha 2017,Las Carlinas,Spain,3.9,52 ratings,18.99
+177,Phone Box Red 2017,Luckett Vineyards,Canada,3.9,51 ratings,24.0
+178,Shiraz 2016,Kingston,Australia,3.9,45 ratings,20.78
+179,Etna Rosso 2017,Benanti,Italy,3.9,40 ratings,21.39
+180,Les Polissons Malbec de Cahors 2018,Clos d'Audhuy,France,3.9,35 ratings,17.11
+181,Valpolicella Ripasso Classico Superiore 2012,Corte Archi,Italy,3.9,35 ratings,20.32
+182,The Looking Glass 2017,Rosewood Estates,Canada,3.9,33 ratings,20.2
+183,Mina Velha Reserva 2015,Quinta de São Sebastião,Portugal,3.9,32 ratings,19.99
+184,Merlot 2016,Township 7,Canada,3.9,28 ratings,22.0
+185,Montebruna Barbera d'Asti N.V.,Braida,Italy,3.8,7619 ratings,21.13
+186,Barbera d'Asti Lavignone N.V.,Pico Maccario,Italy,3.8,9971 ratings,16.5
+187,Roble 2016,Protos,Spain,3.8,10243 ratings,23.99
+188,Red (Winemaker's Blend) 2017,Apothic,United States,3.8,7024 ratings,14.99
+189,Old Vine Zinfandel 2014,Ravenswood,United States,3.8,5022 ratings,23.0
+190,Periquita Reserva 2016,José Maria da Fonseca,Portugal,3.8,4695 ratings,18.99
+191,Tinto (Malbec) 2017,Amalaya,Argentina,3.8,4576 ratings,16.0
+192,Cabernet Sauvignon 2015,Montes Alpha,Chile,3.8,4232 ratings,23.0
+193,Cabernet Sauvignon 2017,Josh Cellars,United States,3.8,3795 ratings,19.99
+194,Pèppoli Chianti Classico 2017,Antinori,Italy,3.8,3192 ratings,25.49
+195,Valpolicella Ripasso Superiore 2016,Zonin,Italy,3.8,3053 ratings,19.49
+196,Garnacha 2017,Honoro Vera,Spain,3.8,2949 ratings,18.99
+197,Essential Red 2016,Bogle,United States,3.8,2607 ratings,20.5
+198,Tre 2016,Brancaia,Italy,3.8,1841 ratings,24.0
+199,Cabernet Sauvignon 2016,Ghost Pines,United States,3.8,1797 ratings,20.75
+200,Chianti Classico 2016,San Felice,Italy,3.8,1755 ratings,23.0
+201,Embocadero (Viña el Águila) 2014,San Pedro Regalado,Spain,3.8,1570 ratings,19.91
+202,Pinot Noir N.V.,Whitehaven,New Zealand,3.8,1477 ratings,21.49
+203,Sangiovese Toscana 2018,Caparzo,Italy,3.8,1315 ratings,13.75
+204,Nero d'Avola 2018,Cusumano,Italy,3.8,1319 ratings,19.99
+205,Reserva Cabernet Sauvignon 2013,Terrazas de los Andes,Argentina,3.8,1214 ratings,18.75
+206,Montepulciano d'Abruzzo Riserva 2016,Tor del Colle,Italy,3.8,1165 ratings,20.78
+207,y de Aylés N.V.,Pago Aylés,Spain,3.8,1128 ratings,17.25
+208,Reserva 2016,Colossal,Portugal,3.8,1091 ratings,19.99
+209,Zinfandel 2016,Joel Gott,United States,3.8,998 ratings,20.0
+210,Douro Red 2017,Quinta de La Rosa,Portugal,3.8,983 ratings,27.49
+211,Kali Hart Pinot Noir 2016,Talbott,United States,3.8,967 ratings,22.0
+212,The Barossan Shiraz 2017,Peter Lehmann,Australia,3.8,953 ratings,24.99
+213,Montecucco Rosso Riserva 2014,ColleMassari,Italy,3.8,894 ratings,21.23
+214,Encuentro Malbec 2015,Rutini,Argentina,3.8,784 ratings,23.0
+215,Touriga Nacional 2016,Coragem,Portugal,3.8,768 ratings,14.51
+216,Piceno Bacchus 2018,Ciù Ciù,Italy,3.8,698 ratings,21.61
+217,The Lodge Hill Shiraz 2015,Jim Barry,Australia,3.8,619 ratings,31.02
+218,Punto Final Cabernet Sauvignon 2018,Renacer,Argentina,3.8,610 ratings,17.49
+219,UNO Malbec 2016,Antigal,Argentina,3.8,576 ratings,22.0
+220,Achelo Syrah 2017,La Braccesca,Italy,3.8,568 ratings,17.11
+221,Syrah Les Vignes d'à Côté 2018,Yves Cuilleron,France,3.8,560 ratings,29.99
+222,Pinot Noir 2017,Les Jamelles,France,3.8,525 ratings,21.25
+223,Paso Robles Cabernet Sauvignon 2017,Broadside,United States,3.8,520 ratings,23.0
+224,Fuerza 2014,EGO,Spain,3.8,512 ratings,17.25
+225,Altitud Malbec 2016,Andeluna,Argentina,3.8,512 ratings,24.0
+226,Zinfandel 2016,Gnarled Vine,United States,3.8,491 ratings,16.99
+227,La Garnacha Salvaje del Moncayo 2017,Proyecto Garnachas de España,Spain,3.8,489 ratings,21.99
+228,Cool Coast Pinot Noir 2016,Casa Silva,Chile,3.8,432 ratings,24.0
+229,Heritage Reserve Zinfandel 2015,DeLoach,United States,3.8,417 ratings,23.99
+230,Malbec 2018,Pascual Toso,Argentina,3.8,413 ratings,15.49
+231,Passion has Red Lips 2017,Some Young Punks,Australia,3.8,387 ratings,24.95
+232,Dolcetto d'Alba 2018,G.D. Vajra,Italy,3.8,378 ratings,19.55
+233,Chianti Classico 2017,Castello di Monsanto,Italy,3.8,373 ratings,21.23
+234,Cabernet Sauvignon 2015,Ernie Els,South Africa,3.8,349 ratings,24.0
+235,Merlot - Cabernet Sauvignon Brentino 2016,Maculan,Italy,3.8,338 ratings,24.0
+236,Barbera d'Alba 2018,Mauro Molino,Italy,3.8,332 ratings,26.24
+237,Novas Gran Reserva Carmenère - Cabernet Sauvignon 2017,Emiliana,Chile,3.8,323 ratings,21.49
+238,Shooting Star Scarlet Red Blend N.V.,Steele,United States,3.8,292 ratings,21.99
+239,Pour Ma Gueule (Assemblage Pais) 2016,Clos des Fous,Chile,3.8,289 ratings,24.99
+240,Baco Noir 2018,Wayne Gretzky Estates No. 99,Canada,3.8,280 ratings,15.95
+241,Mãos Tinto 2016,R4 Vinhos,Portugal,3.8,277 ratings,16.8
+242,Terre More Maremma Toscana 2017,Tenuta Ammiraglia,Italy,3.8,268 ratings,13.75
+243,Pinot Noir 2018,Long Barn,United States,3.8,263 ratings,18.43
+244,Borgeri Rosso 2016,Giorgio Meletti Cavallari,Italy,3.8,259 ratings,20.16
+245,Cantaloro Toscana Rosso 2016,Avignonesi,Italy,3.8,253 ratings,20.0
+246,Pinot Noir 2018,Sea Sun,United States,3.8,245 ratings,22.0
+247,Barbera d'Asti Bricco N.V.,Paolo Conterno,Italy,3.8,240 ratings,24.86
+248,Les Christins Vacqueyras 2015,Famille Perrin,France,3.8,239 ratings,24.0
+249,Pinotage 2017,Delheim,South Africa,3.8,238 ratings,12.19
+250,Rouge 2017,Domaine de Majas,France,3.8,235 ratings,24.99
+251,Zinfandel 2016,Artezin,United States,3.8,229 ratings,24.99
+252,Barbera del Monferrato 2016,Scarpetta,Italy,3.8,227 ratings,21.75
+253,Reserve Merlot 2016,Mission Hill Family Estate,Canada,3.8,210 ratings,24.0
+254,Second Innings Malbec 2017,Bleasdale,Australia,3.8,206 ratings,17.49
+255,Valle Escondido Cabernet Sauvignon 2015,Gouguenheim,Argentina,3.8,202 ratings,16.75
+256,Chocolate Factory Shiraz 2016,Zonte's Footstep,Australia,3.8,200 ratings,19.5
+257,Central Coast Pinot Noir N.V.,Inception,United States,3.8,198 ratings,15.99
+258,Cosmus Chianti Riserva 2013,Piandaccoli,Italy,3.8,197 ratings,15.73
+259,Gneisz és Csillám 2015,Weninger,Hungary,3.8,193 ratings,22.95
+260,Killerman's Run Cabernet Sauvignon 2014,Kilikanoon,Australia,3.8,180 ratings,19.75
+261,Côtes du Rhône Roc-Epine 2018,Domaine Lafond,France,3.8,172 ratings,19.82
+262,Avi 2014,San Patrignano,Italy,3.8,159 ratings,24.29
+263,Pinot Noir 2016,Bliss,United States,3.8,158 ratings,20.99
+264,Valpolicella Ripasso Superiore 2016,Famiglia Pasqua,Italy,3.8,157 ratings,16.0
+265,Petit Verdot 2015,Durigutti,Argentina,3.8,154 ratings,23.99
+266,Amplus Old Vine Carignan 2014,Santa Ema,Chile,3.8,144 ratings,24.26
+267,Côtes du Rhône Cuvée Vieilles Vignes 2015,Domaine Roger Perrin,France,3.8,142 ratings,21.75
+268,Langhe Nebbiolo 2016,Silvio Grasso,Italy,3.8,140 ratings,24.0
+269,Finca Lalande Malbec 2018,Domaine Bousquet,Argentina,3.8,136 ratings,15.99
+270,Finca La Florencia Malbec 2018,Bodega Familia Cassone,Argentina,3.8,132 ratings,20.48
+271,Bordeaux 2015,Château Vieux Poirier,France,3.8,131 ratings,21.99
+272,Meritage 2015,Cedar Creek Estate Winery,Canada,3.8,124 ratings,24.0
+273,Roero 2017,Matteo Correggia,Italy,3.8,125 ratings,39.91
+274,Côtes du Rhône Mistral 2016,Domaine de Ferrand,France,3.8,121 ratings,24.95
+275,Les Copains d’abord Gamay Le Premier Soir 2017,Château de Corcelles,France,3.8,119 ratings,18.25
+276,Barbera d'Alba 2016,Collina Serragrilli,Italy,3.8,117 ratings,15.12
+277,Chianti Classico 2010,MonteMaggio,Italy,3.8,115 ratings,20.32
+278,Bordeaux Supérieur 2015,Château Montcabrier,France,3.8,109 ratings,14.0
+279,Aconcagua Costa Syrah 2016,Errazuriz,Chile,3.8,107 ratings,23.99
+280,Rossovigliano 2017,Vigliano,Italy,3.8,103 ratings,19.71
+281,Terre d'Argence Costières-de-Nîmes 2016,Château Mourgues du Grès,France,3.8,102 ratings,23.85
+282,Sibaris Reserva Especial Cabernet Sauvignon 2017,Undurraga,Chile,3.8,99 ratings,22.52
+283,Nero 2017,Coriole Vineyards,Australia,3.8,99 ratings,23.0
+284,Piculit-Neri 2015,Emilio Bulfon,Italy,3.8,97 ratings,22.65
+285,Montigiano 2014,Il Borghetto,Italy,3.8,95 ratings,22.15
+286,Aglianico Campania Rue Dell'Inchiostro 2018,Nativ,Italy,3.8,98 ratings,11.14
+287,Merlot 2017,Tinhorn Creek,Canada,3.8,95 ratings,24.26
+288,Chianti Classico 2015,San Giorgio a Lapi,Italy,3.8,90 ratings,19.1
+289,Shiraz 2015,Delheim,South Africa,3.8,90 ratings,17.3
+290,Merlot 2017,Ecco Domani,Italy,3.8,86 ratings,14.25
+291,Kloof Street Swartland Rouge 2018,Mullineux,South Africa,3.8,87 ratings,23.0
+292,Dão Tinto 2015,Casa de Mouraz,Portugal,3.8,85 ratings,24.99
+293,Citto Toscana 2018,Volpaia,Italy,3.8,83 ratings,17.55
+294,Ottobre Rosso Montepulciano d'Abruzzo 2017,Tenuta I Fauri,Italy,3.8,82 ratings,15.12
+295,Excellent Reserve 2011,Weingut R&A Pfaffl,Austria,3.8,81 ratings,33.92
+296,Le Dôme du Grand Bois Côtes du Rhône 2018,Ortas - Cave de Rasteau,France,3.8,79 ratings,21.65
+297,La Lippa Barbera d'Asti 2018,La Gironda,Italy,3.8,74 ratings,22.99
+298,Il Corzanello Rosso 2015,Corzano e Paterno,Italy,3.8,74 ratings,15.12
+299,Merlot 2017,Mt. Boucherie,Canada,3.8,73 ratings,24.99
+300,Pinot Noir 2017,Arrowleaf,Canada,3.8,70 ratings,18.26
+301,Vendanges Nocturnes (Classic) Rouge 2018,Laurent Miquel,France,3.8,69 ratings,12.99
+302,Chianti Riserva 2015,Barbanera,Italy,3.8,68 ratings,24.74
+303,Malbec 2017,Waterbrook,United States,3.8,69 ratings,24.99
+304,Cabernet Franc (Small Lot) 2013,Wente,United States,3.8,64 ratings,22.95
+305,Bailè Langhe Nebbiolo 2015,Collina Serragrilli,Italy,3.8,60 ratings,24.29
+306,Cabernet Sauvignon 2018,Prelius,Italy,3.8,61 ratings,21.55
+307,N Nero d'Avola 2009,Feudo Montoni,Italy,3.8,57 ratings,14.51
+308,Sacravite Basilicata 2016,D'Angelo,Italy,3.8,57 ratings,21.99
+309,Cormì Corvina - Merlot 2015,Zenato,Italy,3.8,55 ratings,20.5
+310,Mr. Black's Little Book Shiraz 2017,Small Gully,Australia,3.8,52 ratings,19.49
+311,Olho no Pé Vinhas Velhas Reserva Tinto 2013,Folias de Baco,Portugal,3.8,50 ratings,13.6
+312,Vigna Flaminio Brindisi Riserva 2009,Vallone,Italy,3.8,50 ratings,15.43
+313,Gran Reserva - 10 Years Tempranillo 2013,Anciano,Spain,3.8,50 ratings,14.7
+314,Pinot Noir 2018,Los Morros,Chile,3.8,44 ratings,24.99
+315,Rosso di Montalcino 2012,Corte dei Venti,Italy,3.8,42 ratings,19.71
+316,Vinhão 2016,Aphros,Portugal,3.8,40 ratings,16.8
+317,Time Waits For No One 6M 2016,Finca Bacara,Spain,3.8,40 ratings,21.95
+318,Dangerous Liaison Red 2018,Dirty Laundry Vineyard,Canada,3.8,39 ratings,23.99
+319,Álvaro Castro Tinto 2016,Quinta da Pellada,Portugal,3.8,39 ratings,16.55
+320,Celentano Vineyard Gamay 2018,Orofino,Canada,3.8,38 ratings,28.0
+321,Chianti Classico 2017,Poggio Al Sole,Italy,3.8,37 ratings,21.39
+322,Pinot Noir 2018,Hunter's,New Zealand,3.8,36 ratings,24.95
+323,Monte dei Cocci Negroamaro 2017,Girolamo,Italy,3.8,34 ratings,14.99
+324,Shooting Star Zinfandel 2017,Steele,United States,3.8,33 ratings,24.99
+325,Oxum Tinto 2017,Vasques de Carvalho,Portugal,3.8,33 ratings,15.28
+326,San Gimignano Pinot Nero 2017,Panizzi,Italy,3.8,32 ratings,18.18
+327,Les Peyrouzelles 2018,Causse Marines,France,3.8,31 ratings,23.9
+328,Cortes Cannonau di Sardegna 2015,Mura,Italy,3.8,30 ratings,16.5
+329,Ossimoro 2015,Pietraventosa,Italy,3.8,30 ratings,21.23
+330,Côtes de Bourg 2017,Château Bujan,France,3.8,29 ratings,40.87
+331,Bramosia Chianti Classico 2017,Donna Laura,Italy,3.8,29 ratings,21.49
+332,Cuvée Joseph Mazard Corbières 2012,Domaine Serres Mazard,France,3.8,28 ratings,21.23
+333,Chianti Colli Fiorentini 2010,Ottomani,Italy,3.8,25 ratings,24.59
+334,Premium 50 Barricas Syrah 2012,Alceño,Spain,3.7,7847 ratings,22.52
+335,Barbera d'Asti Le Orme N.V.,Michele Chiarlo,Italy,3.7,14108 ratings,19.44
+336,Malbec 2018,Alamos,Argentina,3.7,10615 ratings,14.99
+337,Tinto N.V.,Porta 6,Portugal,3.7,25270 ratings,15.0
+338,Malbec 2017,La Linda,Argentina,3.7,5979 ratings,19.91
+339,Pruno Ribera del Duero 2015,Finca Villacreces,Spain,3.7,4630 ratings,22.0
+340,Tinto 2017,Julia Florista,Portugal,3.7,4041 ratings,8.95
+341,Cabernet Sauvignon (Cs) 2017,Substance,United States,3.7,3881 ratings,24.99
+342,Tinto 2017,Porca de Murca,Portugal,3.7,3785 ratings,15.99
+343,Cabernet Sauvignon 2016,Bogle,United States,3.7,3315 ratings,20.5
+344,Côtes-du-Rhône Rouge 2016,E. Guigal,France,3.7,3087 ratings,20.99
+345,Pinot Noir 2016,Erath,United States,3.7,2934 ratings,24.0
+346,Campofiorin Rosso Veronese 2016,Masi,Italy,3.7,2924 ratings,22.99
+347,Don David Reserve Malbec 2018,El Esteco,Argentina,3.7,2328 ratings,19.99
+348,Les Vignes de Bila-Haut Côtes du Roussillon Villages 2017,M. Chapoutier,France,3.7,2261 ratings,14.5
+349,Tinto 2015,Quinta do Vallado,Portugal,3.7,2117 ratings,20.62
+350,Vaucluse Cuvee Rouge 2016,Cuvée Jean-Paul,France,3.7,2018 ratings,15.95
+351,Cabernet Sauvignon 2016,Estancia,United States,3.7,1789 ratings,17.25
+352,Chaminé Tinto 2017,Cortes de Cima,Portugal,3.7,1787 ratings,20.3
+353,Cabernet Sauvignon 2017,La Linda,Argentina,3.7,1619 ratings,19.91
+354,Bordeaux 2015,Clarendelle,France,3.7,1623 ratings,16.99
+355,Malbec Reserva 2016,Kaiken,Argentina,3.7,1581 ratings,20.78
+356,Tinto (Malbec) 2018,Amalaya,Argentina,3.7,1591 ratings,18.99
+357,Berardenga Chianti Classico 2017,Fèlsina,Italy,3.7,1579 ratings,22.15
+358,Reserva 2015,Hacienda López de Haro,Spain,3.7,1264 ratings,24.84
+359,Toscana Dogajolo Rosso 2017,Carpineto,Italy,3.7,1261 ratings,19.99
+360,Diálogo Tinto 2017,Niepoort,Portugal,3.7,1086 ratings,21.61
+361,Cabernet Sauvignon 2018,Robert Mondavi Private Selection,United States,3.7,1059 ratings,14.49
+362,Rocca Guicciarda Chianti Classico Riserva 2016,Ricasoli,Italy,3.7,1046 ratings,24.0
+363,Club Privado Tinto 2017,Baron de Ley,Spain,3.7,908 ratings,19.99
+364,Il Falcone Riserva Castel del Monte 2008,Rivera,Italy,3.7,890 ratings,23.07
+365,Cabernet Sauvignon 2017,The Show,United States,3.7,876 ratings,21.99
+366,1884 Reservado Malbec 2013,Escorihuela Gascón,Argentina,3.7,824 ratings,20.0
+367,Jumilla Yellow Label 2018,Juan Gil,Spain,3.7,820 ratings,16.95
+368,Benuara (Tenuta Presti e Pegni) 2016,Cusumano,Italy,3.7,811 ratings,20.0
+369,Lagone Toscana 2017,Aia Vecchia,Italy,3.7,810 ratings,24.99
+370,Founders' Estate Cabernet Sauvignon 2018,Beringer,United States,3.7,797 ratings,16.49
+371,Chianti Classico 2016,Brancaia,Italy,3.7,799 ratings,22.15
+372,Malbec 2017,Tinto Negro (TintoNegro),Argentina,3.7,752 ratings,17.99
+373,Nero d'Avola 2017,Stemmari,Italy,3.7,738 ratings,16.99
+374,Periquita Tinto (Original) 2018,José Maria da Fonseca,Portugal,3.7,729 ratings,13.99
+375,Nero d'Avola 2017,Zabu,Italy,3.7,708 ratings,17.3
+376,Old Vine Zinfandel 2016,Plungerhead,United States,3.7,674 ratings,19.99
+377,The Footbolt Shiraz 2017,d'Arenberg,Australia,3.7,677 ratings,22.99
+378,Vinsobres Les Cornuds 2015,Famille Perrin,France,3.7,662 ratings,20.0
+379,Baltos Mencía 2015,Dominio de Tares,Spain,3.7,659 ratings,22.99
+380,Estate Malbec 2018,Humberto Canale,Argentina,3.7,632 ratings,19.99
+381,Merlot 2015,Smoking Loon,United States,3.7,600 ratings,17.3
+382,Malbec 2018,Los Haroldos,Argentina,3.7,589 ratings,16.99
+383,Chianti Classico 2017,Volpaia,Italy,3.7,591 ratings,21.85
+384,Shiraz 2015,Schild Estate,Australia,3.7,546 ratings,23.0
+385,Chianti Classico 2013,Arceno,Italy,3.7,518 ratings,21.75
+386,Heritage Reserve Pinot Noir 2017,DeLoach,United States,3.7,504 ratings,22.99
+387,Courela Tinto 2018,Cortes de Cima,Portugal,3.7,484 ratings,16.9
+388,Tempranillo - Syrah 2016,Gran Sello,Spain,3.7,470 ratings,16.99
+389,The Musician Cabernet - Shiraz 2015,Majella,Australia,3.7,463 ratings,24.99
+390,Naoussa Boutari Grande Reserve 2012,Boutari,Greece,3.7,456 ratings,24.49
+391,Merlot 2015,Benziger,United States,3.7,428 ratings,20.0
+392,Laya 2019,Atalaya,Spain,3.7,415 ratings,18.49
+393,Beaujolais-Villages 2017,Domaine Piron Lameloise,France,3.7,406 ratings,24.99
+394,Colheita Red 2016,Quinta do Portal,Portugal,3.7,399 ratings,23.49
+395,Bordeaux Supérieur 2016,Château Argadens,France,3.7,390 ratings,24.99
+396,Vintner's Collection Cabernet Sauvignon 2018,Sterling Vineyards,United States,3.7,390 ratings,18.99
+397,Stickleback Red 2014,Heartland,Australia,3.7,385 ratings,15.95
+398,Gold Label Barossa Shiraz 2014,Wolf Blass,Australia,3.7,365 ratings,21.75
+399,Finca La Emperatriz Crianza 2015,Finca La Emperatriz,Spain,3.7,355 ratings,24.95
+400,Cabernet Franc 2017,Durigutti,Argentina,3.7,351 ratings,23.99
+401,Le Pruneé Merlot 2016,Tommasi,Italy,3.7,343 ratings,23.39
+402,Johnny Q Shiraz 2014,Quarisa,Australia,3.7,334 ratings,17.95
+403,Montepulciano d'Abruzzo 2015,Cirelli,Italy,3.7,298 ratings,15.12
+404,Tenacious Red 2014,Purple Cowboy,United States,3.7,298 ratings,16.5
+405,Rouge 2017,Le Petit Chat - Malin,France,3.7,296 ratings,15.56
+406,Vino Nobile di Montepulciano 2012,Bindella - Tenuta Vallocaia,Italy,3.7,294 ratings,24.29
+407,Amphora Tinto 2017,Art.Terra,Portugal,3.7,294 ratings,19.1
+408,Côtes du Rhône Villages Rouge 2017,Famille Perrin,France,3.7,292 ratings,21.65
+409,Old Bush Vine Grenache (Samuel's Garden Collection) 2016,Yalumba,Australia,3.7,278 ratings,22.0
+410,Aglianico del Vulture 2016,Grifalco,Italy,3.7,274 ratings,28.49
+411,Côtes du Rhône Reserve 2018,Cellier des Dauphins,France,3.7,271 ratings,24.37
+412,Cabernet Sauvignon 2016,Maggio Family Vineyards,United States,3.7,261 ratings,20.99
+413,Legado Muñoz Garnacha 2018,Munoz,Spain,3.7,256 ratings,14.95
+414,Malbec 2018,Tapiz,Argentina,3.7,254 ratings,18.99
+415,Amávio 2015,Ávidos,Portugal,3.7,231 ratings,14.51
+416,Encuentro Cabernet Sauvignon 2014,Rutini,Argentina,3.7,225 ratings,17.25
+417,Seleccion Especial Monastrell Finca La Solana 2018,Luzon,Spain,3.7,226 ratings,19.49
+418,Extravaganza Red Blend 2016,Trapiche,Argentina,3.7,205 ratings,15.25
+419,Moreccio Bolgheri 2018,Casa di Terra,Italy,3.7,206 ratings,21.39
+420,Dão Tinto 2016,Quinta dos Roques,Portugal,3.7,201 ratings,24.95
+421,Cabernet Franc 2016,Le Monde,Italy,3.7,194 ratings,22.49
+422,Quinta de Silvares Tinto 2015,Anselmo Mendes,Portugal,3.7,185 ratings,23.63
+423,Valpolicella Classico Superiore Ripasso 2017,Folonari,Italy,3.7,183 ratings,19.99
+424,Chianti Rufina 2015,Frascole,Italy,3.7,161 ratings,18.18
+425,Côtes-du-Rhône-Villages 'Plan de Dieu' 2017,Romain Duvernay,France,3.7,154 ratings,22.99
+426,Pinot Noir 2016,Craftwork,United States,3.7,150 ratings,24.95
+427,Chianti Classico 2013,Tenuta Degli Dei,Italy,3.7,148 ratings,20.16
+428,Lodi Cabernet Sauvignon 2016,Plungerhead,United States,3.7,147 ratings,19.99
+429,Beaujolais-Villages 2015,Domaine Piron Lameloise,France,3.7,145 ratings,23.95
+430,Semonte Alto Valpolicella Ripasso Classico Superiore 2012,Venturini,Italy,3.7,144 ratings,19.71
+431,Glárima Tinto Roble 2016,Bodega Sommos,Spain,3.7,138 ratings,15.0
+432,Chianti Classico 2017,Poggerino,Italy,3.7,138 ratings,24.29
+433,Ventoux Les Gélinottes 2015,Alain Jaume,France,3.7,127 ratings,21.95
+434,Petite Sirah 2017,Old Soul,United States,3.7,124 ratings,19.0
+435,Pactio Toscana Rosso 2016,Fertuna,Italy,3.7,120 ratings,17.57
+436,Dead End Tempranillo 2016,S.C. Pannell,Australia,3.7,119 ratings,22.22
+437,Cabernet Sauvignon 2017,Sottano,Argentina,3.7,119 ratings,19.99
+438,Cabernet Sauvignon Reserva 2016,Falernia,Chile,3.7,110 ratings,19.99
+439,Terrenus 2012,Rui Reguinga,Portugal,3.7,107 ratings,24.29
+440,Okanagan Estate Pinot Noir 2018,Inniskillin,Canada,3.7,107 ratings,17.99
+441,La Jumalie Bourgogne Pinot Noir 2016,Henri Darnat,France,3.7,106 ratings,21.95
+442,Touriga Nacional 2017,Casa Santos Lima,Portugal,3.7,105 ratings,14.26
+443,Chianti Superiore 2018,Castello del Trebbio,Italy,3.7,106 ratings,14.51
+444,Cabernet Sauvignon 2016,Alkoomi,Australia,3.7,103 ratings,19.25
+445,Chianti Classico 2017,Tenuta di Nozzole,Italy,3.7,103 ratings,18.18
+446,Natal Malbec 2017,Alpamanta,Argentina,3.7,101 ratings,21.95
+447,Peloro Rosso 2016,Le Casematte,Italy,3.7,100 ratings,24.99
+448,Major's Block Red Blend 2016,See Ya Later Ranch,Canada,3.7,98 ratings,19.99
+449,Cabernet Franc 2017,Tinhorn Creek,Canada,3.7,97 ratings,26.24
+450,Fidelis Sannio Aglianico 2013,Cantina del Taburno,Italy,3.7,97 ratings,22.1
+451,Bordeaux Supérieur 2016,Château Haut Rozier,France,3.7,97 ratings,21.99
+452,Vendanges Nocturnes (Classic) Rouge 2017,Laurent Miquel,France,3.7,96 ratings,14.7
+453,Nebbiolo Langhe 2018,Giacomo Fenocchio,Italy,3.7,97 ratings,24.29
+454,Nuna Estate Cabernet Sauvignon 2014,Chakana,Argentina,3.7,94 ratings,17.75
+455,Moinho do Gato Tinto 2016,Quinta do Romeu,Portugal,3.7,91 ratings,12.22
+456,Serra del Prete Aglianico del Vulture 2012,Musto Carmelitano,Italy,3.7,91 ratings,20.47
+457,Private Reserve Baco Noir 2017,Peller Estates,Canada,3.7,88 ratings,21.95
+458,Shiraz 2015,West Cape Howe,Australia,3.7,87 ratings,20.0
+459,Chianti Rufina 2016,Grignano,Italy,3.7,86 ratings,24.99
+460,Cantagallo Chianti Montalbano Riserva 2016,Pierazzuoli,Italy,3.7,88 ratings,22.76
+461,Selected Barrels Cabernet - Merlot 2018,Hester Creek,Canada,3.7,84 ratings,18.52
+462,Cabernet Sauvignon 2017,Seven Peaks,United States,3.7,82 ratings,123.44
+463,Mil Historias Organic Malbec 2017,AltoLandon,Spain,3.7,79 ratings,23.99
+464,Malbec Stone Soil Select 2017,Manos Negras,Argentina,3.7,78 ratings,23.99
+465,Johnny Q Cabernet Sauvignon 2015,Quarisa,Australia,3.7,76 ratings,16.95
+466,Big Bang Theory 2018,Blasted Church,Canada,3.7,75 ratings,21.5
+467,Crazy Grapes Monastrell 2017,Finca Bacara,Spain,3.7,75 ratings,18.95
+468,Côté Mer Collioure Rouge 2018,Domaine de la Rectorie,France,3.7,74 ratings,22.91
+469,Haycutters Shiraz 2017,Shingleback,Australia,3.7,69 ratings,22.5
+470,Reserva 2013,Escada,Portugal,3.7,68 ratings,19.25
+471,Vermentino Nero 2018,Terenzuola,Italy,3.7,68 ratings,20.62
+472,Schietto Syrah 2010,Spadafora,Italy,3.7,67 ratings,21.69
+473,Roble 2016,Abadia de Acon,Spain,3.7,64 ratings,23.95
+474,Coteaux d'Aix en Provence Rouge 2018,Château Revelette,France,3.7,63 ratings,24.25
+475,Rosso di Montepulciano 2018,Poderi Sanguineto I e II,Italy,3.7,62 ratings,20.32
+476,Cabernet Sauvignon 2018,Galil Mountain Winery (יקב הרי גליל),Israel,3.7,60 ratings,20.99
+477,Bordeaux Rouge 2018,Croix Saint-Martin,France,3.7,56 ratings,19.04
+478,Cabernet Sauvignon 2016,Lotus,United States,3.7,56 ratings,23.25
+479,Okanagan Estate Merlot 2017,Inniskillin,Canada,3.7,56 ratings,16.99
+480,Cabernet - Merlot 2018,Henry of Pelham,Canada,3.7,55 ratings,15.75
+481,Sassirossi 2017,Masut Da Rive,Italy,3.7,56 ratings,19.95
+482,Bolgheri Orio 2018,Podere Il Castellaccio,Italy,3.7,54 ratings,22.76
+483,St. David's Bench Vineyard Droit Gamay Noir 2017,Château des Charmes,Canada,3.7,52 ratings,19.85
+484,Easton House Red Wine 2011,Easton,United States,3.7,51 ratings,23.9
+485,Bourgogne Pinot Noir Vieilles Vignes 2018,Nicolas Potel,France,3.7,51 ratings,23.45
+486,Gamekeeper's Red Blend 2017,St Hallett,Australia,3.7,49 ratings,14.7
+487,Cuvée Amarante La Clape 2015,Château Rouquette Sur Mer,France,3.7,49 ratings,24.0
+488,Malbec 2017,Aguijón de Abeja,Argentina,3.7,43 ratings,20.99
+489,Reserva Cabernet Sauvignon 2018,Chilcas,Chile,3.7,41 ratings,17.1
+490,Les Sorcières Côtes du Roussillon Rouge 2019,Domaine du Clos des Fées,France,3.7,42 ratings,21.39
+491,Cabernet Sauvignon 2013,Delheim,South Africa,3.7,39 ratings,19.66
+492,Gamay Noir 2018,Trius,Canada,3.7,39 ratings,19.95
+493,Private Reserve Gamay Noir 2017,Peller Estates,Canada,3.7,38 ratings,21.95
+494,Reserva de Familia 3S Cabernet Sauvignon 2012,Sottano,Argentina,3.7,38 ratings,21.0
+495,Il Valtènesi 2017,Pasini San Giovanni,Italy,3.7,37 ratings,18.18
+496,Syrah 2014,Alvarez Nölting,Spain,3.7,36 ratings,19.0
+497,Merlot 2014,Monster,Canada,3.7,36 ratings,19.9
+498,Rosso di Montepulciano 2018,Crociani,Italy,3.7,35 ratings,16.65
+499,Pinot Noir 2015,Haywire,Canada,3.7,34 ratings,24.0
+500,La Ladra Barbera d'Asti Superiore 2016,Tenute dei Vallarino,Italy,3.7,33 ratings,22.52
+501,Signature Pinot Noir 2016,Henri Pion,France,3.7,30 ratings,21.99
+502,Cabernet Sauvignon 2018,Leaping Horse,United States,3.7,33 ratings,15.99
+503,La Champine Syrah 2013,Jean-Michel Gerin,France,3.7,30 ratings,19.55
+504,Rosso di Montalcino 2018,Tenuta di Sesta,Italy,3.7,28 ratings,19.86
+505,Small Lot Gamay 2018,Malivoire,Canada,3.7,30 ratings,21.95
+506,Cabernets 2013,Summerhill Pyramid,Canada,3.7,27 ratings,21.75
+507,Il Nero di Casanova Toscana Sangiovese 2015,La Spinetta,Italy,3.7,26 ratings,23.0
+508,Torre di Ceparano Sangiovese di Romagna Superiore 2015,Fattoria Zerbina,Italy,3.7,26 ratings,21.85
+509,A Mont Langhe Nebbiolo 2017,Paolo Conterno,Italy,3.7,26 ratings,24.0
+510,Private Reserve Cabernet Franc 2017,Peller Estates,Canada,3.7,25 ratings,23.95
+511,Crianza 2016,Cune (CVNE),Spain,3.6,5009 ratings,20.99
+512,Toscana 2015,Santa Cristina,Italy,3.6,6335 ratings,12.75
+513,Rèmole Rosso 2017,Frescobaldi,Italy,3.6,3328 ratings,17.3
+514,Sedàra 2016,Donnafugata,Italy,3.6,3204 ratings,19.75
+515,Merlot 2016,Bogle,United States,3.6,2626 ratings,22.75
+516,Bordeaux 2014,Clarendelle,France,3.6,2528 ratings,24.0
+517,Neprica 2015,Tormaresca,Italy,3.6,2303 ratings,14.25
+518,TW 12 (Twelve) Monastrell 2011,Alceño,Spain,3.6,2118 ratings,18.17
+519,Chianti Classico 2015,Castello di Gabbiano,Italy,3.6,1649 ratings,16.5
+520,Clos de Torribas Crianza Tempranillo 2016,Pinord,Spain,3.6,1549 ratings,17.99
+521,Colheita Seleccionada Tinto 2014,Cabriz,Portugal,3.6,1510 ratings,21.49
+522,Malbec 2018,Tilia,Argentina,3.6,1479 ratings,18.49
+523,Pinot Noir N.V.,Black Ridge,United States,3.6,1386 ratings,22.2
+524,Carmenérè 2017,Root 1,Chile,3.6,1372 ratings,18.17
+525,Shiraz BIN 555 2016,Wyndham,Australia,3.6,1334 ratings,15.75
+526,Le Naturel Red 2018,Aroa,Spain,3.6,1165 ratings,23.99
+527,La Segreta Rosso 2017,Planeta,Italy,3.6,1081 ratings,19.0
+528,Rubesco Rosso di Torgiano 2014,Lungarotti,Italy,3.6,1040 ratings,23.99
+529,Malbec 2018,Argento,Argentina,3.6,1005 ratings,17.99
+530,Estate Gardemiel Vineyard Pinot Noir N.V.,Paul Mas,France,3.6,976 ratings,18.95
+531,Pinot Noir 2018,Angeline,United States,3.6,914 ratings,23.95
+532,667 Pinot Noir 2017,Noble Vines,United States,3.6,875 ratings,22.99
+533,North Coast Cabernet Sauvignon 2017,William Hill,United States,3.6,807 ratings,22.99
+534,Beaujolais-Villages 2018,Louis Jadot,France,3.6,803 ratings,20.99
+535,Pinot Noir 2018,Cline,United States,3.6,791 ratings,24.95
+536,Rosso di Montalcino 2018,Banfi,Italy,3.6,770 ratings,18.18
+537,Brecciarolo Rosso Piceno Superiore 2015,Velenosi,Italy,3.6,741 ratings,12.95
+538,Aglianico Rubrato 2017,Feudi di San Gregorio,Italy,3.6,731 ratings,24.0
+539,Cerasuolo di Vittoria 2016,Planeta,Italy,3.6,692 ratings,24.0
+540,Samorëns Côtes-du-Rhône Rouge 2016,Ferraton Père & Fils,France,3.6,694 ratings,21.99
+541,Zinfandel 2017,Bonterra,United States,3.6,671 ratings,23.99
+542,Frescaripa Bardolino Classico 2017,Masi,Italy,3.6,664 ratings,17.3
+543,Tinto 2017,São Miguel do Sul,Portugal,3.6,644 ratings,19.91
+544,Chianti Classico 2013,Castello di Monsanto,Italy,3.6,610 ratings,21.54
+545,Vintner's Collection Merlot 2016,Sterling Vineyards,United States,3.6,607 ratings,18.99
+546,Select Tinto 2016,Monte dos Amigos,Portugal,3.6,580 ratings,16.43
+547,Valpolicella Classico 2018,Speri,Italy,3.6,552 ratings,21.99
+548,Ronan by Clinet Bordeaux 2015,Château Clinet,France,3.6,549 ratings,24.99
+549,Crianza 2017,Hacienda López de Haro,Spain,3.6,547 ratings,17.99
+550,Syrah 2016,Michel Gassier,France,3.6,484 ratings,20.99
+551,Pinot Noir 2016,Manos Negras,Argentina,3.6,470 ratings,17.99
+552,Gragnano N.V.,Iovine,Italy,3.6,455 ratings,12.37
+553,Red Blend 2015,Farmers of Wine,Italy,3.6,418 ratings,19.91
+554,Secateurs Red Blend 2013,Badenhorst,South Africa,3.6,416 ratings,22.0
+555,Old Vine Zinfandel 2015,Zen of Zin,United States,3.6,388 ratings,13.25
+556,Côtes-du-Rhône-Villages 'Plan de Dieu' 2015,Château Saint-Jean,France,3.6,359 ratings,22.0
+557,Loreto Barbera d'Asti N.V.,Molino,Italy,3.6,357 ratings,15.83
+558,Brusco 2016,Fattoria dei Barbi,Italy,3.6,309 ratings,24.99
+559,Crianza 2016,Pagos de Aráiz,Spain,3.6,304 ratings,18.95
+560,Armonia Toscana 2016,Casadei,Italy,3.6,294 ratings,14.51
+561,Llama Old Vine Malbec 2018,Belasco de Baquedano,Argentina,3.6,296 ratings,20.99
+562,Montepulciano d'Abruzzo 2016,Torre dei Beati,Italy,3.6,276 ratings,15.12
+563,Cabernet Sauvignon 2016,Mirassou,United States,3.6,266 ratings,12.75
+564,Terroir Único Pinot Noir 2018,Zorzal,Argentina,3.6,261 ratings,22.42
+565,Chianti Classico 2015,Rocca di Castagnoli,Italy,3.6,260 ratings,17.87
+566,Las Tres Filas Mencia Bierzo 2016,Merayo,Spain,3.6,256 ratings,20.25
+567,Lagrein 2016,Alois Lageder,Italy,3.6,242 ratings,23.0
+568,Pinot Noir 2018,McManis,United States,3.6,230 ratings,21.95
+569,Cabernet Sauvignon 2017,Gravelly Ford,United States,3.6,227 ratings,20.5
+570,Diálogo Tinto 2018,Niepoort,Portugal,3.6,221 ratings,24.99
+571,Chianti Classico 2013,Capraia,Italy,3.6,214 ratings,16.96
+572,Montepulciano d'Abruzzo 2015,Tiberio,Italy,3.6,202 ratings,21.75
+573,Estate Pinot Noir 2018,Humberto Canale,Argentina,3.6,204 ratings,19.99
+574,Pinot Noir 2016,Opawa,New Zealand,3.6,200 ratings,20.25
+575,Winemaker's Special Reserve Red 2012,William Cole,Chile,3.6,198 ratings,21.65
+576,Cabernet Sauvignon 2017,Cycles Gladiator,United States,3.6,199 ratings,22.99
+577,Reserve Malbec 2018,Trapiche,Argentina,3.6,197 ratings,14.99
+578,Tinto 2016,Opta,Portugal,3.6,194 ratings,22.99
+579,Lame del Sorbo Tintilia del Molise 2013,Vinica,Italy,3.6,191 ratings,16.04
+580,Rosário Tinto 2018,Casa Ermelinda Freitas,Portugal,3.6,183 ratings,15.99
+581,Shiraz 2017,Guardian Peak,South Africa,3.6,177 ratings,21.99
+582,Ventoux 2018,Famille Perrin,France,3.6,172 ratings,15.49
+583,Bordeaux Supérieur 2016,Château Canada,France,3.6,168 ratings,22.99
+584,Pinotage - Malbec 2019,Bruce Jack,South Africa,3.6,165 ratings,103.94
+585,Chevalier de Dyonis Pinot Noir 2015,Serve,Romania,3.6,162 ratings,15.99
+586,Selección de Fincas Graciano 2016,Cune (CVNE),Spain,3.6,158 ratings,20.99
+587,Red Knot Cabernet Sauvignon 2015,Shingleback,Australia,3.6,144 ratings,17.8
+588,Mas Donis Negre 2018,Capçanes,Spain,3.6,143 ratings,20.99
+589,Central Coast Zinfandel 2015,Sextant,United States,3.6,140 ratings,23.99
+590,El Politico Garnacha 2015,Baltasar Gracián,Spain,3.6,140 ratings,17.3
+591,Valdolmo Nebbiolo d'Alba 2016,Vite Colte,Italy,3.6,137 ratings,24.0
+592,Tempranillo Roble 2016,Pata Negra,Spain,3.6,130 ratings,16.57
+593,Assisi Rosso 2016,Sportoletti,Italy,3.6,124 ratings,21.99
+594,Blaye Côtes de Bordeaux 2014,Château La Guilbonnerie,France,3.6,119 ratings,24.95
+595,Dolcetto D'Alba 2016,Paolo Scavino,Italy,3.6,118 ratings,21.23
+596,Primitivo Salento 2014,Cantine due Palme,Italy,3.6,116 ratings,14.75
+597,Gamay 2018,Malivoire,Canada,3.6,116 ratings,19.95
+598,Merlot 2016,Red Rooster,Canada,3.6,112 ratings,20.46
+599,Chianti Classico 2017,Dievole,Italy,3.6,110 ratings,22.76
+600,Pinot Noir 2018,Gray Monk,Canada,3.6,110 ratings,23.09
+601,Al-Muvedre Tinto Monastrell 2018,Telmo Rodriguez,Spain,3.6,110 ratings,17.99
+602,Bordeaux 2018,Clarendelle,France,3.6,109 ratings,16.99
+603,Eloquenzia 2015,Severino Garofano,Italy,3.6,109 ratings,15.12
+604,8A Mil Gracias Graciano 2013,Ochoa,Spain,3.6,108 ratings,25.95
+605,La Réserve Fleurie 2011,Villa Ponciago,France,3.6,107 ratings,23.95
+606,Chianti Classico 2016,Villa Pomona,Italy,3.6,106 ratings,21.23
+607,Rouge N.V.,Dorrance Wines (Vins d'Orrance),South Africa,3.6,104 ratings,18.5
+608,Centenario Reserve Malbec 2018,Graffigna,Argentina,3.5,104 ratings,12.0
+609,LZ Rioja 2018,Telmo Rodriguez,Spain,3.6,99 ratings,22.99
+610,Andrew Mcpherson Shiraz 2018,McPherson,Australia,3.6,98 ratings,17.1
+611,Pinot Noir 2016,Coastal Vines Cellars,United States,3.6,94 ratings,17.99
+612,Toscana Rosso 2018,Tenuta Il Poggione,Italy,3.6,93 ratings,22.99
+613,Sibaris Gran Reserva Pinot Noir 2017,Undurraga,Chile,3.6,89 ratings,19.99
+614,Bardolino Classico Tacchetto 2017,Guerrieri Rizzardi,Italy,3.6,88 ratings,19.75
+615,Fass Nr. 9 Vernatsch 2018,Girlan,Italy,3.6,86 ratings,19.71
+616,Syrah Les Candives 2016,Yves Cuilleron,France,3.6,83 ratings,24.29
+617,Pinot Noir 2017,Ballard Lane,United States,3.6,82 ratings,23.99
+618,Diorama Syrah 2017,Pinord,Spain,3.6,77 ratings,24.99
+619,Cabernet Franc Collio 2015,Gradis'Ciutta,Italy,3.6,75 ratings,19.71
+620,Ventoux Les Gélinottes 2016,Alain Jaume,France,3.6,74 ratings,21.95
+621,Anthos 2015,Matteo Correggia,Italy,3.6,72 ratings,17.41
+622,Cabernet Franc 2017,Bordertown Vineyards and Estate Winery,Canada,3.6,69 ratings,21.99
+623,Merlot 2015,Gnarled Vine,United States,3.6,69 ratings,16.99
+624,Rosso di Montepulciano 2017,Le Bèrne,Italy,3.6,67 ratings,16.65
+625,Pasico Monastrell - Shiraz 2018,Juan Gil,Spain,3.6,67 ratings,15.78
+626,Rosso di Montalcino 2017,Podere Brizio,Italy,3.6,66 ratings,22.76
+627,Cabernet Sauvignon 2017,Drifting,United States,3.6,67 ratings,15.0
+628,Santa Cristina In Pilli Carmignano 2016,Fattoria Ambra,Italy,3.6,64 ratings,18.18
+629,La Multa Old Vine Garnacha 2016,El Escocés Volante,Spain,3.6,63 ratings,15.95
+630,Emilio Valerio 2016,Laderas de Montejurra,Spain,3.6,62 ratings,17.75
+631,Rebus Ruchè di Castagnole Monferrato 2014,Vinchio - Vaglio Serra,Italy,3.6,61 ratings,23.16
+632,Cabernet Sauvignon 2016,Delheim,South Africa,3.6,60 ratings,15.33
+633,Encuentro Pinot Noir 2014,Rutini,Argentina,3.6,60 ratings,19.5
+634,Shiraz Lakefront Series 2018,Konzelmann,Canada,3.6,57 ratings,15.95
+635,Morellino di Scansano 2016,Montecivoli,Italy,3.6,54 ratings,14.21
+636,Chianti Classico 2013,La Montanina,Italy,3.6,53 ratings,14.36
+637,Forgiarìn 2015,Emilio Bulfon,Italy,3.6,52 ratings,20.4
+638,Tano Rosso Veronese 2011,Le Guaite di Noemi,Italy,3.6,50 ratings,18.94
+639,Merlot 2018,McManis,United States,3.6,50 ratings,24.99
+640,Exception Malbec 2018,Château de Gaudou,France,3.6,49 ratings,16.99
+641,Cabernet Sauvignon 2016,Tin Roof Cellars,United States,3.6,50 ratings,16.95
+642,Bergerac Malbec 2018,Château Laulerie,France,3.6,47 ratings,22.49
+643,Le Caprice de Clémentine Rouge 2014,Château Les Valentines,France,3.6,47 ratings,22.91
+644,Rosso di Montalcino 2017,Pian delle Querci,Italy,3.6,45 ratings,17.72
+645,Selected Barrels Merlot 2015,Hester Creek,Canada,3.6,45 ratings,19.5
+646,Rosso 2014,Viteadovest,Italy,3.6,41 ratings,20.93
+647,Rendez-Vous 2017,Viranel,France,3.6,41 ratings,18.49
+648,Lagrein 2018,Girlan,Italy,3.6,40 ratings,20.93
+649,Rosso di Montalcino 2018,Fanti,Italy,3.6,39 ratings,35.06
+650,Morellino di Scansano 2018,Roccapesta,Italy,3.6,26 ratings,23.68
+651,Gricos 2016,Grifalco,Italy,3.6,37 ratings,20.93
+652,Le Tithonien Mondeuse 2018,Domaine de l'Idylle,France,3.6,36 ratings,24.49
+653,Valderroa Mencia 2017,Valdesil,Spain,3.6,35 ratings,21.39
+654,Òtre Primitivo 2018,Teanum,Italy,3.6,36 ratings,13.6
+655,Champs de la Truffière 2013,Domaine du Deffends,France,3.6,35 ratings,23.68
+656,Black Sheep Blend 2015,Young & Wyse Collection,Canada,3.6,34 ratings,25.9
+657,Amaranto Sangiovese 2018,Podere San Cristoforo,Italy,3.6,32 ratings,18.18
+658,Santa Marta Montecucco Sangiovese 2016,Salustri,Italy,3.6,32 ratings,23.37
+659,Stickleback Red 2017,Heartland,Australia,3.6,31 ratings,17.99
+660,Pinot Nero 2018,Sacchetto,Italy,3.6,31 ratings,19.91
+661,Cabernet Sauvignon (Classic) 2018,Montes,Chile,3.6,28 ratings,15.99
+662,Côtes du Rhône 2018,Domaine de la Charbonnière,France,3.6,29 ratings,24.95
+663,Côtes du Rhône 2015,Biodynamic Wine - Domaine des Carabiniers,France,3.6,28 ratings,13.6
+664,Frappato 2014,Poggio di Bortolone,Italy,3.6,28 ratings,13.44
+665,Chianti Classico 2017,Ormanni,Italy,3.6,27 ratings,18.48
+666,Chianti Classico Riserva 2014,Bibbiano,Italy,3.6,25 ratings,20.62
+667,Grenache - Shiraz 2016,Thorn-Clarke,Australia,3.6,37 ratings,17.95
+668,Classic Red Blend 2017,Roodeberg,South Africa,3.6,1830 ratings,11.75
+669,Coastal Estates Cabernet Sauvignon 2016,Beaulieu Vineyard (BV),United States,3.5,1549 ratings,18.17
+670,Five Vineyards Pinot Noir N.V.,Mission Hill Family Estate,Canada,3.5,1224 ratings,20.99
+671,Légende (R) Bordeaux Rouge 2016,Barons de Rothschild (Lafite),France,3.5,1183 ratings,20.5
+672,Altas Cumbres Malbec 2016,Lagarde,Argentina,3.5,1039 ratings,24.26
+673,Cabernet Sauvignon (CAB) 2017,Avalon,United States,3.5,925 ratings,19.75
+674,Porcupine Ridge Syrah 2017,Boekenhoutskloof,South Africa,3.5,808 ratings,15.0
+675,Cabernet Sauvignon 2017,Smoking Loon,United States,3.5,799 ratings,17.3
+676,Bordeaux Supérieur 2016,Château de Camarsac,France,3.5,737 ratings,22.99
+677,Montepulciano d'Abruzzo Riparosso 2017,Illuminati,Italy,3.5,647 ratings,23.39
+678,Aulente Rosso 2016,San Patrignano,Italy,3.5,591 ratings,11.61
+679,Baga Casta Tinto N.V.,Luis Pato,Portugal,3.5,589 ratings,15.75
+680,Malbec 2019,Circus,Argentina,3.5,580 ratings,18.17
+681,Bordeaux Supérieur 2016,Château Le Grand Verdus,France,3.5,567 ratings,20.99
+682,Sabazio 2014,La Braccesca,Italy,3.5,531 ratings,17.25
+683,Pinot Noir 2014,The Pinot Project,United States,3.5,524 ratings,19.95
+684,Pinot Noir 2016,Veramonte,Chile,3.5,490 ratings,18.95
+685,Clásico Garnacha 2017,Anciano,Spain,3.5,453 ratings,14.7
+686,Reserva Merlot (Colchagua Estate) 2016,Santa Carolina,Chile,3.5,439 ratings,12.75
+687,Chianti 2015,Placido,Italy,3.5,438 ratings,16.43
+688,Pinot Noir 2018,Kim Crawford,New Zealand,3.5,436 ratings,18.48
+689,Milton Park Shiraz 2016,Thorn-Clarke,Australia,3.5,422 ratings,19.04
+690,Cabernet Sauvignon N.V.,Brownstone,United States,3.5,408 ratings,17.95
+691,Tama Vineyard Selection Cabernet Sauvignon 2015,Anakena,Chile,3.5,378 ratings,13.0
+692,Chianti Riserva 2013,Rocca delle Macìe,Italy,3.5,372 ratings,23.0
+693,Cabernet - Merlot 2016,Red Rooster,Canada,3.5,355 ratings,18.25
+694,Old Vine Monastrell 2016,Finca Rosal,Spain,3.5,350 ratings,20.95
+695,Leccioni Chianti 2018,Frescobaldi,Italy,3.5,292 ratings,19.04
+696,Chianti 2018,Castello di Querceto,Italy,3.5,286 ratings,16.95
+697,Côtes du Rhône 2011,Domaine du Mistral,France,3.5,256 ratings,20.01
+698,Shiraz 2017,Robertson Winery,South Africa,3.5,218 ratings,11.75
+699,Contraste Tinto 2014,Conceito,Portugal,3.5,213 ratings,16.65
+700,Bonavita Tinto 2017,Casa Santos Lima,Portugal,3.5,202 ratings,16.99
+701,Garnacha 2015,Marques de la Musa,Spain,3.5,194 ratings,17.49
+702,Valpolicella Classico 2015,Ca La Bionda,Italy,3.5,191 ratings,21.75
+703,Cantagallo Chianti Montalbano 2017,Pierazzuoli,Italy,3.5,188 ratings,11.46
+704,Cabernet Sauvignon (Classic) 2017,Montes,Chile,3.5,179 ratings,21.21
+705,Petit Pinotage 2019,Ken Forrester,South Africa,3.5,174 ratings,20.99
+706,The High Trellis Cabernet Sauvignon 2016,d'Arenberg,Australia,3.5,173 ratings,22.99
+707,Grenache 2017,Le Paradou,France,3.5,170 ratings,19.04
+708,Ora 2016,San Patrignano,Italy,3.5,167 ratings,15.43
+709,Vigna di Pallino Chianti 2016,Tenuta Sette Ponti,Italy,3.5,166 ratings,13.14
+710,Le Jaja de Jau Syrah 2018,Château de Jau,France,3.5,167 ratings,13.25
+711,Merlot N.V.,Brownstone,United States,3.5,162 ratings,17.95
+712,Valpolicella Classico 2014,Secondo Marco,Italy,3.5,156 ratings,18.79
+713,Sartiu Cannonau di Sardegna 2017,Giuseppe Sedilesu,Italy,3.5,138 ratings,18.18
+714,The Custodian Grenache 2016,d'Arenberg,Australia,3.5,133 ratings,24.99
+715,Merlot 2017,Wayne Gretzky Estates No. 99,Canada,3.5,125 ratings,15.95
+716,Cabernet Sauvignon 2018,Trius,Canada,3.5,123 ratings,16.95
+717,Merlot 2017,Errazuriz,Chile,3.5,120 ratings,14.5
+718,Single Vineyard Pinot Noir 2018,Yealands,New Zealand,3.4,121 ratings,22.74
+719,Five Vineyards Cabernet - Merlot 2017,Mission Hill Family Estate,Canada,3.5,112 ratings,18.99
+720,Rosso Melograno 2017,Cantina Roccafiore,Italy,3.5,109 ratings,13.6
+721,Solà Fred 2018,Celler Masroig,Spain,3.5,110 ratings,18.99
+722,Cabernet Franc 2017,Vineland Estates Winery,Canada,3.5,107 ratings,21.49
+723,Merlot 2014,Bliss,United States,3.5,106 ratings,19.99
+724,Pinot Noir 2018,Le Fou,France,3.5,103 ratings,18.17
+725,Rupicolo Castel del Monte 2017,Rivera,Italy,3.5,96 ratings,16.99
+726,I Sodi del Paretaio 2018,Badia di Morrona,Italy,3.5,96 ratings,18.95
+727,Boomtown Cabernet Sauvignon 2017,Dusted Valley,United States,3.5,97 ratings,21.0
+728,Reserva Merlot 2017,Echeverría,Chile,3.5,95 ratings,15.99
+729,Casa Scarpa Barbera d'Asti 2016,Scarpa,Italy,3.5,93 ratings,15.12
+730,Explorer Pinot Noir 2017,Domaine Thomson,New Zealand,3.5,90 ratings,23.07
+731,Bliss Vineyard Zinfandel 2013,Brutocao Family Vineyards,United States,3.5,90 ratings,19.99
+732,Rebel.lia Tinto 2018,Vegalfaro,Spain,3.5,87 ratings,21.99
+733,Vintner's Collection Pinot Noir 2018,Sterling Vineyards,United States,3.5,85 ratings,18.99
+734,Il Sangiovese Sangiovese Predappio 2018,Noelia Ricci,Italy,3.5,85 ratings,27.49
+735,Niagara Estate Reserve Meritage 2017,Jackson-Triggs,Canada,3.5,81 ratings,13.95
+736,Cahors 2017,Clos La Coutale,France,3.5,80 ratings,20.99
+737,Soplo 2016,Rafael Cambra,Spain,3.5,72 ratings,15.99
+738,Tempranillo 2016,Torre de Barreda,Spain,3.5,68 ratings,18.5
+739,Primera Amante Malbec 2016,SoloContigo,Argentina,3.5,67 ratings,19.99
+740,Pinot Noir 2018,HobNob,France,3.5,64 ratings,19.04
+741,Cabernet Sauvignon 2017,Bliss,United States,3.5,64 ratings,19.99
+742,Character Red Blend 2018,Hester Creek,Canada,3.5,63 ratings,18.99
+743,Montepulciano d'Abruzzo 2016,Valori,Italy,3.5,58 ratings,21.36
+744,Cabernet Sauvignon 2017,Gnarled Vine,United States,3.5,54 ratings,16.99
+745,Fronsac 2015,Château de Carles,France,3.5,54 ratings,24.0
+746,Mencía Joven 2016,Cobertizo,Spain,3.5,53 ratings,16.0
+747,Cabernet - Merlot 2017,Red Rooster,Canada,3.5,53 ratings,21.94
+748,Bardolino 2015,Le Vigne di San Pietro,Italy,3.5,51 ratings,12.53
+749,Garnacha 2017,Real Compania de Vinos,Spain,3.5,53 ratings,15.57
+750,Dragon Blend 2010,Persuasion,United States,3.5,49 ratings,24.0
+751,Bonarda 2017,Aguijón de Abeja,Argentina,3.5,47 ratings,20.99
+752,Tradition Juliénas 2013,Domaine du Clos du Fief (Michel Tete),France,3.5,44 ratings,19.86
+753,Cantus Vitis Minervois 2015,Cailhol Gautran,France,3.5,44 ratings,13.6
+754,Cabernet Sauvignon 2018,Inniskillin,Canada,3.6,44 ratings,14.99
+755,Pinot Noir 2018,Domaine de Bachellery,France,3.5,43 ratings,18.5
+756,Chianti Classico 2015,Le Miccine,Italy,3.5,42 ratings,19.71
+757,Nanà 2015,Ceraudo,Italy,3.5,41 ratings,17.57
+758,Levato di Majulina 2013,Calafata,Italy,3.5,39 ratings,24.75
+759,Sangiovese 2018,Podere La Berta,Italy,3.5,39 ratings,21.99
+760,Merlot 2015,Cono Sur,Chile,3.5,38 ratings,13.25
+761,McLean Creek Road Vineyard Pinot Noir 2018,Meyer Family Vineyards,Canada,3.5,38 ratings,22.0
+762,Frappato 2017,Manenti,Italy,3.5,37 ratings,23.22
+763,Chianti Colli Senesi (Pancole) 2018,Cesani,Italy,3.5,36 ratings,15.12
+764,Rosso 2017,Buondonno,Italy,3.5,36 ratings,13.6
+765,Il Corzanello Rosso 2017,Corzano e Paterno,Italy,3.5,35 ratings,16.65
+766,Merlot 2017,Delheim,South Africa,3.5,35 ratings,11.01
+767,Petit Verdot 2016,Kingston,Australia,3.5,34 ratings,11.5
+768,Valle Las Acequias Malbec Clase A 2016,Luis Segundo Correas,Argentina,3.5,34 ratings,19.99
+769,Cabernet - Merlot 2012,Tawse,Canada,3.5,31 ratings,21.0
+770,Pievi Bolgheri Rosso 2018,Fabio Motta,Italy,3.5,31 ratings,22.15
+771,Barbera d'Alba Vignota 2018,Conterno Fantino,Italy,3.5,29 ratings,24.29
+772,Vespolina Colline Novaresi 2017,Cà Nova - Codecasa Giada,Italy,3.5,28 ratings,18.41
+773,Cinsault 2018,Olivier Coste,France,3.5,28 ratings,22.74
+774,Pinot Noir 2019,Henry of Pelham,Canada,3.6,29 ratings,16.95
+775,Montecucco Rosso 2016,Campi Nuovi,Italy,3.5,26 ratings,20.01
+776,Pinot Noir delle Venezie 2013,Folonari,Italy,3.5,26 ratings,14.99
+777,Rosso di Montalcino 2012,Solaria Patrizia Cencioni,Italy,3.5,26 ratings,21.08
+778,Cabernet Sauvignon 2018,Angeline,United States,3.5,26 ratings,24.95
+779,Campo Arriba Old Vines 2017,Barahonda,Spain,3.6,27 ratings,18.95
+780,Cabernet - Merlot 2018,Peninsula Ridge Estates Winery,Canada,3.5,25 ratings,15.95
